@@ -1,7 +1,7 @@
 import React from 'react';
 import './Sobre_mi.css';
 // 1. Importamos ambas imágenes desde la carpeta de assets
-import fotoTecnico from '../assets/Tecnico.jpeg';
+import fotoTecnico from '../assets/descarga.png';
 import fotoDesarrollador from '../assets/desarrollador.png';
 
 const Sobre_mi = () => {
@@ -19,7 +19,7 @@ const Sobre_mi = () => {
             <img src={fotoDesarrollador} alt="Foto de Carlos Guevara" className="founder-photo" />
           </div>
           <div className="founder-details">
-            <h3>Carlos Guevara</h3>
+            <h3>Carlos Alberto Guevara Otavo </h3>
             <h4>Desarrollador Web</h4>
             <p>Experto en desarrollo frontend y apasionado por crear interfaces de usuario intuitivas y dinámicas.</p>
             <div className="social-links">
@@ -35,7 +35,7 @@ const Sobre_mi = () => {
             <img src={fotoTecnico} alt="Foto del segundo fundador" className="founder-photo" />
           </div>
           <div className="founder-details">
-            <h3>Nombre de tu Amigo</h3>
+            <h3>Haider Joaquin Rodriguez Cruz</h3>
             <h4>Especialista en Redes y Cableado</h4>
             <p>Especialista en diseño UX/UI, enfocado en la experiencia del usuario y la estética visual de los proyectos.</p>
             <div className="social-links">

@@ -1,5 +1,6 @@
 import React from 'react';
-import imagenPerfil from '../assets/logo_nextwave.png';
+import imagenPerfil from '../assets/logo_nextwave_V3.gif';
+// Importamos Bootstrap Icons
 import 'bootstrap-icons/font/bootstrap-icons.css';
 // Importamos los nuevos estilos para esta sección
 import './About.css';
@@ -26,29 +27,41 @@ function About() {
 
       {/* La sección de servicios ahora se muestra debajo del encabezado principal */}
       <div className="services-overview-grid">
-        {/* Servicio 1 */}
+        {/* Diseño y Desarrollo Web */}
         <div className="service-overview-card">
           <i className="bi bi-code-slash"></i>
-          <h3>Desarrollo Web a la Medida</h3>
-          <p>Construimos tu presencia digital desde cero, con un diseño responsivo (mobile-first) que garantiza una experiencia de usuario impecable.</p>
+          <h3>Diseño y Desarrollo Web</h3>
+          <p>Diseñamos interfaces de usuario (UX/UI) dinámicas y creamos desde landing pages hasta aplicaciones web complejas con sistemas de facturación.</p>
         </div>
-        {/* Servicio 2 */}
+        {/* Redes y Cableado Estructurado */}
         <div className="service-overview-card">
           <i className="bi bi-hdd-network-fill"></i>
-          <h3>Infraestructura de Redes</h3>
-          <p>Diseñamos e implementamos soluciones de conectividad robustas para asegurar una red estable, segura y de alta velocidad.</p>
+          <h3>Redes y Cableado Estructurado</h3>
+          <p>Instalamos y certificamos redes de datos robustas, incluyendo la manipulación e instalación de fibra óptica para garantizar la máxima velocidad y estabilidad.</p>
         </div>
-        {/* Servicio 3 */}
+        {/* Mantenimiento de Equipos */}
         <div className="service-overview-card">
           <i className="bi bi-headset"></i>
-          <h3>Soporte Técnico Especializado</h3>
-          <p>Garantizamos la continuidad operativa de tus sistemas con asistencia remota para diagnóstico y resolución de incidencias.</p>
+          <h3>Mantenimiento de Equipos</h3>
+          <p>Ofrecemos mantenimiento preventivo y correctivo para equipos de oficina, asegurando su óptimo rendimiento y prolongando su vida útil.</p>
         </div>
-        {/* Servicio 4 */}
+        {/* Instalación de Sistemas Operativos */}
         <div className="service-overview-card">
-          <i className="bi bi-robot"></i>
-          <h3>Integración de IA</h3>
-          <p>Potenciamos tu web con IA, desde chatbots conversacionales hasta sistemas de recomendación personalizados.</p>
+          <i className="bi bi-pc-display-horizontal"></i>
+          <h3>Soporte y Sistemas Operativos</h3>
+          <p>Realizamos formateo e instalación de sistemas operativos como Windows 11 y Linux, además de software de Microsoft, optimizando el rendimiento de tus equipos.</p>
+        </div>
+        {/* Cámaras de Seguridad */}
+        <div className="service-overview-card">
+          <i className="bi bi-camera-video-fill"></i>
+          <h3>Instalación de Cámaras de Seguridad</h3>
+          <p>Implementamos sistemas de videovigilancia (CCTV) para proteger tus activos y garantizar la seguridad de tus instalaciones físicas.</p>
+        </div>
+        {/* Soporte General */}
+        <div className="service-overview-card">
+          <i className="bi bi-person-check-fill"></i>
+          <h3>Soporte Técnico Integral</h3>
+          <p>Brindamos soporte técnico especializado para resolver incidencias de software y hardware, garantizando la continuidad operativa de tu negocio.</p>
         </div>
       </div>
     </section>

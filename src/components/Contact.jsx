@@ -1,6 +1,8 @@
+import './Contact.css'; // Importamos los nuevos estilos
+
 const Contact = () => {
   return (
-    <section id="contacto" className="section">
+    <section id="contacto" className="contact-section">
       <h2 className="section-title">Contacto</h2>
       <form className="contact-form">
         <input type="text" placeholder="Nombre" required />

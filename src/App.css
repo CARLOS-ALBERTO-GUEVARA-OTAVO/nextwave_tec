@@ -1,20 +1,13 @@
 /* Variables de diseño mejoradas */
 :root {
-  --primary: #2C3E50; /* Dark Slate Blue */
-  --primary-dark: #1A2634; /* Darker Slate Blue */
-  --secondary: #34495E; /* Steel Blue */
-  --accent: #D4A017; /* Soft Gold */
-  --accent-light: #F1C40F; /* Gold más claro */
-  --dark: #2D2D2D; /* Dark Gray */
-  --darker: #1C2526; /* Almost Black */
-  --light: #F5F6F5; /* Off-White */
-  --lighter: #FFFFFF; /* Pure White */
-  --gray: #7F8C8D; /* Neutral Gray */
-  --light-gray: #ECF0F1; /* Light Gray */
-  --success: #16A085; /* Deep Teal */
-  --neutral: #4A6076; /* Tono intermedio */
-  --highlight: #E74C3C; /* Rojo coral */
-  --shadow-primary: rgba(44, 62, 80, 0.15);
+  --primary-blue: #0d1a2e;
+  --accent-blue: #3c6382;
+  --highlight-aqua: #00f6ff;
+  --light-bg: #f0f4f8; /* Un gris azulado muy claro para el fondo */
+  --white: #ffffff;
+  --dark-text: #333333;
+  --gray-text: #6c757d;
+  --shadow: rgba(13, 44, 90, 0.1);
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-secondary: 'Montserrat', sans-serif;
 }
@@ -34,8 +27,8 @@ html {
 body {
   font-family: var(--font-primary);
   line-height: 1.7;
-  color: var(--dark);
-  background: linear-gradient(135deg, var(--light), var(--light-gray)); /* Fondo chévere */
+  color: var(--dark-text);
+  background-color: var(--light-bg); /* Nuevo fondo para que resalten las tarjetas */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,9 +41,32 @@ h1, h2, h3, h4 {
 }
 
 /* Estilo del contenedor App */
-.App {
+.main-content {
   width: 100%;
-  margin: 0;
-  padding: 0;
+  padding-top: 140px; /* Aumentamos el espacio para el nuevo tamaño del header */
   overflow-x: hidden;
+}
+
+/* --- ESTE ES EL NUEVO CONTENEDOR PARA CADA SECCIÓN --- */
+.page-section {
+  background-color: var(--white);
+  margin: 2.5rem 5%; /* Espacio entre secciones */
+  padding: 3rem;
+  border-radius: 25px; /* Bordes redondeados */
+  box-shadow: 0 15px 40px var(--shadow);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px var(--shadow);
+}
+
+/* Estilo para los títulos de sección */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 2.5rem;
 }

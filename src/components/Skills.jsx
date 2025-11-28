@@ -1,39 +1,30 @@
 import React from 'react';
+import './Skills.css'; // Importamos el CSS del componente
 
-const Skills = () => {
-  // Lista de habilidades con nombre, ícono (Font Awesome) y nivel
-  const skills = [
-    { name: 'HTML', icon: 'fab fa-html5', level: 90 },
-    { name: 'CSS', icon: 'fab fa-css3-alt', level: 85 },
-    { name: 'JavaScript', icon: 'fab fa-js', level: 85 },
-    { name: 'PHP', icon: 'fab fa-php', level: 70 },
-    { name: 'MySQL', icon: 'fas fa-database', level: 75 },
-    { name: 'Python', icon: 'fab fa-python', level: 80 },
-    { name: 'Laravel', icon: 'fab fa-laravel', level: 65 },
-    { name: 'React', icon: 'fab fa-react', level: 80 },
-    { name: 'Bootstrap', icon: 'fab fa-bootstrap', level: 75 },
-    { name: 'Git', icon: 'fab fa-git-alt', level: 70 },
+const Services = () => {
+  // Lista de servicios que ofrece la empresa
+  const services = [
+    { name: 'Desarrollo Web', icon: 'fas fa-laptop-code', description: 'Creamos sitios web modernos, rápidos y responsivos.' },
+    { name: 'Diseño UX/UI', icon: 'fas fa-palette', description: 'Diseñamos interfaces atractivas y fáciles de usar.' },
+    { name: 'Aplicaciones Móviles', icon: 'fas fa-mobile-alt', description: 'Desarrollamos apps para iOS y Android.' },
+    { name: 'Consultoría Tecnológica', icon: 'fas fa-cogs', description: 'Te asesoramos para elegir la mejor tecnología para tu proyecto.' },
+    { name: 'E-commerce', icon: 'fas fa-shopping-cart', description: 'Implementamos tiendas en línea completas y seguras.' },
+    { name: 'Mantenimiento Web', icon: 'fas fa-tools', description: 'Nos encargamos de que tu sitio esté siempre actualizado y funcionando.' },
   ];
 
   return (
-    <section id="habilidades" className="section skills-section">
-      <h2 className="section-title">Habilidades</h2>
-      <div className="skills-grid">
-        {skills.length > 0 ? (
+    <section id="servicios" className="section services-section">
+      <h2 className="section-title">Nuestros Servicios</h2>
+      <div className="services-grid">
+        {services.length > 0 ? (
           <>
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="skill-card"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-                style={{ border: '1px solid red' }} // Depuración: borde rojo para ver si las tarjetas se renderizan
-              >
-                <div className="skill-icon">
-                  <i className={skill.icon} />
+            {services.map((service, index) => (
+              <div key={index} className="service-card" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div className="service-icon">
+                  <i className={service.icon} />
                 </div>
-                <h4 className="skill-name">{skill.name}</h4>
-                <div className="skill-level">{skill.level}%</div>
+                <h4 className="service-name">{service.name}</h4>
+                <p className="service-description">{service.description}</p>
               </div>
             ))}
           </>
@@ -45,4 +36,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Services;

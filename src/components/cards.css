@@ -1,0 +1,37 @@
+/* Estilos para las cuadrículas de tarjetas (Skills y Portfolio) */
+.card-grid {
+  display: grid;
+  /* 
+    Crea columnas que se ajustan automáticamente al espacio disponible.
+    Cada columna tendrá un mínimo de 200px y se expandirá para ocupar el espacio.
+  */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem; /* Espacio entre las tarjetas */
+  padding: 1rem 0;
+}
+
+/* Estilos base para cada tarjeta individual */
+.card {
+  background-color: var(--light-bg);
+  border: 1px solid #EAE8E1; /* Un borde sutil derivado del fondo */
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 8px var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  /* Flexbox para alinear el contenido dentro de la tarjeta verticalmente */
+  display: flex;
+  flex-direction: column;
+  /* 
+    Cambiamos 'space-between' por 'flex-start' y añadimos 'flex-grow'
+    para que las tarjetas se estiren uniformemente.
+  */
+  justify-content: flex-start; 
+  flex-grow: 1;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(2, 2, 1, 0.15);
+}

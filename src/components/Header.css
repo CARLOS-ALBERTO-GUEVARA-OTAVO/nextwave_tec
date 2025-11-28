@@ -1,195 +1,127 @@
+/* 1. Importamos la nueva tipografía "Poppins" */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Paleta de colores consistente con el logo */
+/* Paleta de colores "Tech Humanistic" */
+:root {
+  --primary-dark: #020201;    /* Negro absoluto */
+  --secondary-dark: #554E47; /* Tono café oscuro / gris cálido */
+  --highlight-warm: #FCC683; /* Naranja suave / durazno */
+  --light-bg: #FBF8ED;       /* Fondo crema claro / beige */
+  --white: #ffffff;
+  --gray-text: #554E47;      /* Reemplazado por el tono café */
+  --shadow: rgba(2, 2, 1, 0.1); /* Sombra basada en el negro */
+}
+
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 5%; /* Hacemos el header aún más alto */
+  background-color: transparent;
+  padding: 1.2rem 5%; /* Un poco más de padding vertical */
+  /* Fondo oscuro y profesional de la nueva paleta */
+  background: linear-gradient(to right, var(--primary-dark), var(--secondary-dark));
+  color: var(--white);
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  padding: 1.5rem 6%; /* Aumentamos un poco el padding para un look más amplio */
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(240, 248, 255, 0.95)); /* Degradado sutil */
-  backdrop-filter: blur(15px); /* Blur más suave */
-  -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 6px 20px rgba(44, 62, 80, 0.2); /* Sombra más elegante */
   z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.5s ease-in-out; /* Transición más fluida */
-  border-bottom: 2px solid rgba(212, 160, 23, 0.2); /* Borde dorado sutil */
-}
-
-.header.scrolled {
-  padding: 1rem 6%;
-  background: linear-gradient(90deg, rgba(44, 62, 80, 0.95), rgba(52, 73, 94, 0.95));
-  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
-}
-
-.header-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  transition: all 0.4s ease-in-out;
+  font-family: 'Poppins', sans-serif; /* 2. Aplicamos la nueva fuente */
 }
 
 .logo {
-  font-size: 1.6rem; /* Un poco más grande para destacar */
-  font-weight: 800; /* Más bold */
-  color: var(--primary);
-  letter-spacing: -0.5px;
   display: flex;
   align-items: center;
-  padding-left: 2.5rem; /* Espacio chimbita a la izquierda */
-  transition: color 0.4s ease, transform 0.4s ease;
+}
+.logo img {
+  max-height: 75px; /* Logo más grande y con más impacto */
+  max-height: 55px; /* Hacemos el logo un poco más grande */
+  transition: max-height 0.4s ease;
 }
 
-.logo::before {
-  content: '';
-  display: inline-block;
-  width: 28px; /* Icono un poco más grande */
-  height: 28px;
-  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Degradado chévere */
-  margin-right: 10px; /* Más separación del texto */
-  border-radius: 6px;
-  transform: rotate(45deg);
-  transition: background 0.4s ease, transform 0.4s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera al icono */
-}
-
-.header.scrolled .logo {
-  color: var(--lighter);
-}
-
-.header.scrolled .logo::before {
-  background: linear-gradient(45deg, var(--accent), var(--primary-dark));
-  transform: rotate(45deg) scale(1.1); /* Efecto al scrollear */
-}
-
-.logo span {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-left: 0.8rem;
-  color: var(--gray);
-  font-family: var(--font-secondary);
-  transition: color 0.4s ease;
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Espacio entre los links y el botón CTA */
 }
 
 .nav-links {
   display: flex;
-  gap: 3rem; /* Más espacio entre enlaces */
-  padding-right: 2rem;
+  gap: 2.5rem; /* Más espacio entre los enlaces */
 }
 
 .nav-links a {
-  color: var(--dark);
-  font-weight: 600;
+  color: var(--white);
   text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem; /* Letra de enlaces más grande */
+  font-size: 1.05rem; /* Aumentamos el tamaño de la fuente */
+  cursor: pointer;
+  transition: color 0.3s ease;
   position: relative;
-  padding: 0.6rem 0;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  transition: color 0.4s ease, transform 0.4s ease;
+  padding: 5px 0;
 }
 
-.nav-links a:hover {
-  color: var(--accent);
-  transform: translateY(-2px); /* Efecto lift al hover */
-}
-
+/* Línea animada debajo de los enlaces */
 .nav-links a::after {
   content: '';
   position: absolute;
-  width: 0;
-  height: 3px; /* Línea un poco más gruesa */
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
-  bottom: -2px;
-  left: 0;
-  transition: width 0.5s ease;
-}
-
-.nav-links a:hover::after {
   width: 100%;
-}
-
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--dark);
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: color 0.4s ease, transform 0.4s ease;
-  padding-right: 2rem;
-}
-
-.header.scrolled .mobile-menu-btn {
-  color: var(--lighter);
-}
-
-.mobile-menu-btn:hover {
-  transform: scale(1.1); /* Efecto al hover */
-}
-
-/* Menú móvil */
-.mobile-nav {
-  display: none;
-  position: fixed;
-  top: 0;
+  height: 2px;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(135deg, var(--primary), var(--secondary)); /* Degradado chévere */
-  z-index: 999;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
+  background-color: var(--highlight-warm);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
 }
 
-.mobile-nav.active {
-  transform: translateX(0);
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--highlight-warm);
 }
 
-.mobile-nav a {
-  color: var(--lighter);
-  font-size: 1.8rem;
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Estilos para el header cuando se hace scroll */
+.header.scrolled {
+  /* Efecto Glassmorphism con la nueva paleta */
+  background-color: rgba(2, 2, 1, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 1.2rem 5%; /* Ajustamos el padding en estado scroll */
+  padding: 0.8rem 5%;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.header.scrolled .logo img {
+  max-height: 60px; /* Ajustamos el tamaño del logo en estado scroll */
+  max-height: 50px; /* El logo se encoge un poco al hacer scroll */
+}
+
+/* 3. Estilos para el nuevo botón de "Contáctanos" */
+.cta-button {
+  background-color: var(--highlight-warm);
+  color: var(--primary-dark);
+  padding: 0.9rem 2rem; /* Botón aún más grande */
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
   text-decoration: none;
-  margin: 1.5rem 0;
   font-weight: 600;
-  transition: color 0.4s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(252, 198, 131, 0.3);
+  font-size: 1.2rem; /* Misma fuente que los enlaces */
 }
 
-.mobile-nav a:hover {
-  color: var(--accent-light);
-}
-
-.close-menu {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  background: none;
-  border: none;
-  color: var(--lighter);
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: transform 0.4s ease;
-}
-
-.close-menu:hover {
-  transform: rotate(90deg);
-}
-
-/* Responsive mejorado */
-@media (max-width: 768px) {
-  .header {
-    padding: 1.2rem 6%;
-  }
-  .nav-links {
-    display: none;
-  }
-  .mobile-menu-btn {
-    display: block;
-  }
-  .mobile-nav {
-    display: flex;
-  }
+.cta-button:hover {
+  background-color: var(--white);
+  color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 25px rgba(252, 198, 131, 0.5);
 }

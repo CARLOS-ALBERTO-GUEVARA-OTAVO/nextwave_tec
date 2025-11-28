@@ -1,8 +1,10 @@
+import './Timeline.css'; // Importamos el estilo compartido
+
 const Experience = () => {
   return (
-    <section id="experiencia" className="section">
+    <section id="experiencia" className="timeline-section">
       <h2 className="section-title">Experiencia</h2>
-      <div className="experience-item">
+      <div className="timeline-item">
         <h3>Desarrollador Frontend</h3>
         <p>Empresa XYZ | 2023 - Presente</p>
         <ul>

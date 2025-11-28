@@ -1,19 +1,19 @@
 .education-item {
-  background: var(--lighter);
+  background: var(--light-bg);
   padding: 2.5rem;
   border-radius: 16px;
   margin-bottom: 2rem;
-  box-shadow: 0 10px 30px var(--shadow-primary);
-  border-left: 4px solid var(--primary);
+  box-shadow: 0 10px 30px var(--shadow);
+  border-left: 4px solid var(--highlight-warm);
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   overflow: hidden;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .education-item:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px var(--shadow-primary);
+  box-shadow: 0 15px 40px var(--shadow);
   opacity: 1;
 }
 
@@ -24,7 +24,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(44, 62, 80, 0.05), rgba(212, 160, 23, 0.05));
+  background: linear-gradient(135deg, rgba(2, 2, 1, 0.02), rgba(252, 198, 131, 0.05));
   z-index: 0;
 }
 
@@ -45,13 +45,13 @@
 .education-item h3 {
   position: relative;
   z-index: 1;
-  color: var(--darker);
+  color: var(--primary-dark);
   margin-bottom: 0.75rem;
 }
 
 .education-item p {
   position: relative;
   z-index: 1;
-  color: var(--gray);
+  color: var(--gray-text);
   margin-bottom: 0.5rem;
 }

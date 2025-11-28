@@ -1,28 +1,34 @@
-.skills-section {
-  padding: 6rem 5%;
-  background-color: var(--lighter);
+.services-section {
+  /* Eliminamos padding y background */
   position: relative;
+  padding: 0;
 }
 
-.skills-grid {
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.skill-card {
-  background: var(--primary);
-  color: var(--lighter);
+.service-card {
+  background: var(--light-bg);
+  color: var(--gray-text);
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 0 10px 20px var(--shadow-primary);
+  box-shadow: 0 10px 20px var(--shadow);
   position: relative;
   overflow: hidden;
+
+  /* --- CAMBIOS PARA ALINEACIÓN UNIFORME --- */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea al inicio para consistencia */
+  height: 100%; /* Asegura que la tarjeta ocupe toda la altura de la celda de la cuadrícula */
 }
 
 .skill-card::before {
@@ -32,51 +38,46 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(212, 160, 23, 0.1), rgba(44, 62, 80, 0.1));
+  background: linear-gradient(135deg, var(--secondary-dark), var(--highlight-warm));
   z-index: 0;
   transition: opacity 0.3s ease;
   opacity: 0;
 }
 
-.skill-card:hover::before {
+.service-card:hover::before {
   opacity: 1;
 }
 
-.skill-card:hover {
+.service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px var(--shadow-primary);
+  box-shadow: 0 15px 30px rgba(2, 2, 1, 0.15);
+  color: var(--white);
 }
 
-.skill-icon {
+.service-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--accent);
+  color: var(--secondary-dark);
   transition: transform 0.3s ease;
 }
 
-.skill-card:hover .skill-icon {
+.service-card:hover .service-icon {
   transform: scale(1.1);
 }
 
-.skill-name {
+.service-name {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--lighter);
+  color: var(--primary-dark);
 }
 
-.skill-level {
-  font-size: 0.9rem;
-  color: var(--accent-light);
-  font-weight: 500;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  display: inline-block;
-  transition: background 0.3s ease;
+.service-card:hover .service-name, .service-card:hover .service-description, .service-card:hover .service-icon {
+  color: var(--white);
 }
 
-.skill-card:hover .skill-level {
-  background: var(--accent);
-  color: var(--darker);
+.service-description {
+  font-size: 1rem;
+  color: var(--gray-text);
+  line-height: 1.6;
 }

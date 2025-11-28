@@ -26,8 +26,8 @@ const Header = () => {
       <nav className="main-nav">
         <div className="nav-links">
           <Link to="inicio" smooth={true} duration={500} offset={-140} activeClass="active">Inicio</Link>
-          <Link to="nosotros" smooth={true} duration={500} offset={-140} activeClass="active">Nosotros</Link>
           <Link to="servicios" smooth={true} duration={500} offset={-140} activeClass="active">Servicios</Link>
+          <Link to="nosotros" smooth={true} duration={500} offset={-140} activeClass="active">Nosotros</Link>
           <Link to="proyectos" smooth={true} duration={500} offset={-140} activeClass="active">Proyectos</Link>
         </div>
         {/* Botón de Llamada a la Acción (CTA) */}

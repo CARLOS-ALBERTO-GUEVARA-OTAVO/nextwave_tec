@@ -54,6 +54,87 @@
 }
 
 /* ==========================================================================
+   Botón de Acción Principal y Redes Sociales
+   ========================================================================== */
+
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cta-button-main {
+  background: linear-gradient(45deg, var(--highlight-warm), #fca652);
+  color: var(--primary-dark);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(252, 166, 82, 0.4);
+}
+
+.cta-button-main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(252, 166, 82, 0.5);
+}
+
+.social-media-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-media-links a {
+  color: var(--secondary-dark);
+  font-size: 1.8rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media-links a:hover {
+  color: var(--highlight-warm);
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   Sección de Pilares
+   ========================================================================== */
+
+.our-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.pillar-card {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--light-bg);
+  border-radius: 16px;
+  border-top: 4px solid var(--highlight-warm-light); /* Un tono más claro para diferenciar */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.pillar-card i {
+  font-size: 2.5rem;
+  color: var(--highlight-warm);
+  margin-bottom: 1rem;
+}
+
+.pillar-card h4 {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
    Grid de Servicios
    ========================================================================== */
 
@@ -113,6 +194,11 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .about-actions {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Para dispositivos móviles (hasta 576px) */
@@ -133,3 +219,6 @@
     padding: 1.5rem; /* Menos padding en tarjetas para móviles */
   }
 }
+
+/* Variable de color adicional que podría ser útil en tu archivo principal de CSS */
+/* :root { --highlight-warm-light: #fde4cf; } */

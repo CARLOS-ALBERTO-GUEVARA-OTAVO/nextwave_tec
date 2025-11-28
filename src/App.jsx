@@ -19,12 +19,14 @@ function App() {
         <section id="inicio" className="page-section hero-section">
           <About />
         </section>
+         <section id="servicios" className="page-section">
+          <Skills />
+        </section>
+        
         <section id="nosotros" className="page-section">
           <Sobre_mi />
         </section>
-        <section id="servicios" className="page-section">
-          <Skills />
-        </section>
+       
         <section id="proyectos" className="page-section">
           <Portfolio />
         </section>

@@ -33,10 +33,21 @@
   border-left: 5px solid transparent;
 }
 
+/* Estilo para invertir el layout de la tarjeta */
+.founder-profile.reverse-layout {
+  flex-direction: row-reverse;
+  border-left: none; /* Quitamos el borde izquierdo inicial */
+  border-right: 5px solid transparent; /* Lo pasamos a la derecha */
+}
 .founder-profile:hover {
   border-left-color: #FCC683; /* Naranja suave / durazno */
   transform: translateX(10px);
   box-shadow: 0 10px 30px rgba(2, 2, 1, 0.1); /* Sombra basada en negro */
+}
+
+.founder-profile.reverse-layout:hover {
+  border-right-color: #FCC683; /* Aplicamos el color al borde derecho en hover */
+  transform: translateX(-10px); /* Movemos en la dirección opuesta */
 }
 
 .founder-photo-wrapper {
@@ -92,4 +103,27 @@
 
 .social-links a:hover {
   color: #FCC683; /* Naranja suave / durazno */
+}
+
+/* ==========================================================================
+   Media Queries para Responsividad
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .founder-profile,
+  .founder-profile.reverse-layout {
+    flex-direction: column; /* Apilamos imagen y texto verticalmente */
+    text-align: center;
+  }
+
+  .founder-profile:hover,
+  .founder-profile.reverse-layout:hover {
+    transform: translateY(-8px) translateX(0); /* Ajustamos la animación para móvil */
+    border-left-color: #FCC683;
+    border-right-color: transparent; /* Evitamos borde derecho en móvil */
+  }
+
+  .social-links {
+    justify-content: center; /* Centramos los iconos sociales */
+  }
 }

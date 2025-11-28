@@ -1,37 +1,108 @@
 import React from 'react';
+import Slider from 'react-slick';
 import './Skills.css'; // Importamos el CSS del componente
 
+// Importamos los estilos del carrusel
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+// --- IMPORTANTE ---
+// Debes crear estas imágenes y ponerlas en tu carpeta de assets.
+import bgDesarrollo from '../assets/imagen_1.png';
+import bgRedes from '../assets/imagen_2.png';
+import bgMantenimiento from '../assets/imagen_3.png';
+import bgSoporte from '../assets/imagen_4.png';
+import bgSeguridad from '../assets/imagen_5.png';
+import bgMantenimiento_2 from '../assets/imagen_6.png';
+
 const Services = () => {
-  // Lista de servicios que ofrece la empresa
+  // Definimos los servicios en un array para mapearlos fácilmente
   const services = [
-    { name: 'Desarrollo Web', icon: 'fas fa-laptop-code', description: 'Creamos sitios web modernos, rápidos y responsivos.' },
-    { name: 'Diseño UX/UI', icon: 'fas fa-palette', description: 'Diseñamos interfaces atractivas y fáciles de usar.' },
-    { name: 'Aplicaciones Móviles', icon: 'fas fa-mobile-alt', description: 'Desarrollamos apps para iOS y Android.' },
-    { name: 'Consultoría Tecnológica', icon: 'fas fa-cogs', description: 'Te asesoramos para elegir la mejor tecnología para tu proyecto.' },
-    { name: 'E-commerce', icon: 'fas fa-shopping-cart', description: 'Implementamos tiendas en línea completas y seguras.' },
-    { name: 'Mantenimiento Web', icon: 'fas fa-tools', description: 'Nos encargamos de que tu sitio esté siempre actualizado y funcionando.' },
+    {
+      icon: 'bi bi-code-slash',
+      title: 'Diseño y Desarrollo Web',
+      description: 'Creamos experiencias digitales únicas, desde landing pages impactantes hasta aplicaciones web complejas con interfaces (UX/UI) intuitivas y dinámicas.',
+      backgroundImage: bgDesarrollo
+    },
+    {
+      icon: 'bi bi-hdd-network-fill',
+      title: 'Redes y Cableado Estructurado',
+      description: 'Diseñamos e implementamos infraestructuras de red robustas y escalables. Certificamos cableado estructurado y fibra óptica para máxima velocidad.',
+      backgroundImage: bgRedes
+    },
+    {
+      icon: 'bi bi-headset',
+      title: 'Mantenimiento de Equipos',
+      description: 'Aseguramos la longevidad y el rendimiento óptimo de tu hardware con planes de mantenimiento preventivo y correctivo para equipos de oficina.',
+      backgroundImage: bgMantenimiento
+    },
+    {
+      icon: 'bi bi-pc-display-horizontal',
+      title: 'Soporte y Sistemas Operativos',
+      description: 'Optimizamos tus estaciones de trabajo mediante la instalación y configuración de sistemas operativos (Windows, Linux) y software esencial.',
+      backgroundImage: bgSoporte
+    },
+    {
+      icon: 'bi bi-camera-video-fill',
+      title: 'Instalación de Cámaras de Seguridad',
+      description: 'Protegemos tus activos con la instalación profesional de sistemas de videovigilancia (CCTV), ofreciendo monitoreo y seguridad constante.',
+      backgroundImage: bgSeguridad
+    },
+    {
+      icon: 'bi bi-person-check-fill',
+      title: 'Soporte Técnico Integral',
+      description: 'Ofrecemos asistencia técnica especializada para resolver cualquier incidencia de software o hardware, garantizando la continuidad de tu negocio.',
+      backgroundImage: bgMantenimiento_2 
+    }
   ];
 
+  // Configuración del carrusel
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 2 }
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 1 }
+      }
+    ]
+  };
+
   return (
-    <section id="servicios" className="section services-section">
+    <section id="servicios" className="services-section">
       <h2 className="section-title">Nuestros Servicios</h2>
-      <div className="services-grid">
-        {services.length > 0 ? (
-          <>
-            {services.map((service, index) => (
-              <div key={index} className="service-card" data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="service-icon">
-                  <i className={service.icon} />
-                </div>
-                <h4 className="service-name">{service.name}</h4>
-                <p className="service-description">{service.description}</p>
+      <p className="section-subtitle">
+        Entendemos tus necesidades y las transformamos en soluciones tecnológicas robustas y eficientes. Explora cómo podemos ayudarte a alcanzar tus objetivos.
+      </p>
+      <Slider {...settings}>
+        {services.map((service, index) => (
+          <div key={index} className="service-slide">
+            <div 
+              className="service-overview-card"
+              style={{ backgroundImage: `url(${service.backgroundImage})` }}
+            >
+              <div className="card-overlay"></div>
+              <div className="card-content">
+                <i className={service.icon}></i>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <a href="#contacto" className="card-action-button">
+                  Me Interesa <i className="bi bi-cursor-fill"></i>
+                </a>
               </div>
-            ))}
-          </>
-        ) : (
-          <p style={{ color: 'red' }}>Error: No skills data or rendering issue.</p>
-        )}
-      </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
     </section>
   );
 };

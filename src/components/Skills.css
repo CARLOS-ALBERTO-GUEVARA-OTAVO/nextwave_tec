@@ -1,83 +1,180 @@
+/* ==========================================================================
+   Contenedor Principal de la Sección de Servicios
+   ========================================================================== */
+
 .services-section {
-  /* Eliminamos padding y background */
+  /* Hereda los estilos de .page-section, pero podemos añadir overrides aquí si es necesario */
+  padding-bottom: 4rem; /* Más espacio inferior para los puntos del carrusel */
+}
+
+/* ==========================================================================
+   Estilos para cada diapositiva del carrusel
+   ========================================================================== */
+
+.service-slide {
+  padding: 0 1rem; /* Espacio horizontal entre las tarjetas */
+}
+
+.service-overview-card {
   position: relative;
-  padding: 0;
+  height: 400px; /* Altura fija para las tarjetas */
+  border-radius: 16px;
+  overflow: hidden; /* Oculta lo que se salga de la tarjeta (para el zoom) */
+  color: var(--white);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
+.service-overview-card:hover {
+  transform: scale(1.03); /* Ligero zoom al pasar el ratón */
 }
 
-.service-card {
-  background: var(--light-bg);
-  color: var(--gray-text);
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 0 10px 20px var(--shadow);
-  position: relative;
-  overflow: hidden;
-
-  /* --- CAMBIOS PARA ALINEACIÓN UNIFORME --- */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Alinea al inicio para consistencia */
-  height: 100%; /* Asegura que la tarjeta ocupe toda la altura de la celda de la cuadrícula */
-}
-
-.skill-card::before {
-  content: '';
+/* Capa semitransparente sobre la imagen */
+.card-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--secondary-dark), var(--highlight-warm));
-  z-index: 0;
-  transition: opacity 0.3s ease;
-  opacity: 0;
+  background: linear-gradient(to top, rgba(13, 26, 46, 0.9) 0%, rgba(13, 26, 46, 0.5) 100%);
+  z-index: 1;
+  transition: background 0.4s ease;
 }
 
-.service-card:hover::before {
+/* Contenido de la tarjeta */
+.card-content {
+  position: absolute; /* Cambiado para controlar la animación */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  height: 100%;
+  /* La magia de la animación: el contenido se esconde, dejando ver solo 140px desde arriba */
+  transform: translateY(calc(100% - 140px));
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-overview-card:hover .card-content {
+  transform: translateY(0); /* Al pasar el ratón, el contenido se desliza hacia arriba hasta su posición final */
+}
+
+.card-content i {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--white); /* Cambiado a blanco para mejor contraste */
+}
+
+.card-content h3 {
+  font-size: 1.7rem; /* Título prominente */
+  margin-bottom: 0.5rem;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.card-content p {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+  opacity: 0; /* El párrafo está oculto por defecto */
+  transition: opacity 0.3s ease 0.1s;
+}
+
+.card-action-button {
+  color: var(--highlight-warm);
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity 0.3s ease 0.1s, background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  padding: 0; /* Sin padding para que parezca un enlace de texto */
+  border: none;
+  align-self: flex-start;
+}
+
+.service-overview-card:hover .card-action-button {
+  opacity: 1; /* Se muestra en hover */
+}
+
+/* El párrafo también se muestra en hover */
+.service-overview-card:hover .card-content p {
   opacity: 1;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(2, 2, 1, 0.15);
-  color: var(--white);
-}
-
-.service-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--secondary-dark);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.1);
-}
-
-.service-name {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+.card-action-button:hover {
+  background-color: var(--highlight-warm);
   color: var(--primary-dark);
+  padding: 6px 12px; /* Añadimos padding en hover para que se sienta como un botón */
 }
 
-.service-card:hover .service-name, .service-card:hover .service-description, .service-card:hover .service-icon {
-  color: var(--white);
+/* ==========================================================================
+   Personalización de los puntos (dots) del carrusel
+   ========================================================================== */
+
+.slick-dots {
+  bottom: -2rem; /* Posiciona los puntos debajo de las tarjetas */
 }
 
-.service-description {
-  font-size: 1rem;
-  color: var(--gray-text);
-  line-height: 1.6;
+.slick-dots li button:before {
+  font-size: 12px;
+  color: var(--secondary-dark);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--highlight-warm);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Personalización de las flechas (arrows) del carrusel
+   ========================================================================== */
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'bootstrap-icons';
+  font-size: 20px;
+  color: var(--primary-dark);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.slick-prev:before {
+  content: "\f12f";
+}
+
+.slick-next:before {
+  content: "\f138";
+}
+
+/* Estilos para hacer las flechas más visibles */
+.slick-prev,
+.slick-next {
+  width: 45px;
+  height: 45px;
+  background-color: var(--white);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  z-index: 10;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: var(--light-bg);
+}
+
+/* Ajuste de posición de las flechas */
+.slick-prev {
+  left: -20px;
+}
+.slick-next {
+  right: -20px;
 }

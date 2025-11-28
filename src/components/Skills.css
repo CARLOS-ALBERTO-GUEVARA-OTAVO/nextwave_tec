@@ -52,16 +52,17 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  /* Centramos el contenido inicial (logo y título) */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   height: 100%;
-  /* La magia de la animación: el contenido se esconde, dejando ver solo 140px desde arriba */
-  transform: translateY(calc(100% - 140px));
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .service-overview-card:hover .card-content {
-  transform: translateY(0); /* Al pasar el ratón, el contenido se desliza hacia arriba hasta su posición final */
+  /* Al pasar el ratón, el contenido se desliza hacia arriba */
+  transform: translateY(-1%);
 }
 
 .card-content i {
@@ -71,7 +72,7 @@
 }
 
 .card-content h3 {
-  font-size: 1.7rem; /* Título prominente */
+  font-size: 1.7rem;
   margin-bottom: 0.5rem;
   color: var(--white);
   line-height: 1.2;
@@ -81,7 +82,9 @@
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 1.5rem;
   opacity: 0; /* El párrafo está oculto por defecto */
-  transition: opacity 0.3s ease 0.1s;
+  transition: opacity 0.3s ease;
+  /* Limitamos el ancho para que no se vea mal en tarjetas anchas */
+  max-width: 90%;
 }
 
 .card-action-button {
@@ -89,14 +92,13 @@
   text-decoration: none;
   font-weight: 600;
   opacity: 0; /* Oculto por defecto */
-  transition: opacity 0.3s ease 0.1s, background-color 0.3s, color 0.3s;
+  transition: opacity 0.3s ease, color 0.3s;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   background-color: transparent;
   padding: 0; /* Sin padding para que parezca un enlace de texto */
   border: none;
-  align-self: flex-start;
 }
 
 .service-overview-card:hover .card-action-button {
@@ -109,9 +111,8 @@
 }
 
 .card-action-button:hover {
-  background-color: var(--highlight-warm);
-  color: var(--primary-dark);
-  padding: 6px 12px; /* Añadimos padding en hover para que se sienta como un botón */
+  color: var(--white);
+  text-decoration: underline;
 }
 
 /* ==========================================================================

@@ -17,17 +17,19 @@
 
 .service-overview-card {
   position: relative;
-  height: 400px; /* Altura fija para las tarjetas */
+  height: 250px; /* Altura inicial reducida */
   border-radius: 16px;
   overflow: hidden; /* Oculta lo que se salga de la tarjeta (para el zoom) */
   color: var(--white);
   background-size: cover;
   background-position: center;
-  transition: transform 0.3s ease-in-out;
+  /* Transición para la altura y la transformación */
+  transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.3s ease-in-out;
 }
 
 .service-overview-card:hover {
-  transform: scale(1.03); /* Ligero zoom al pasar el ratón */
+  transform: scale(1.05); /* Zoom ligeramente más pronunciado */
+  height: 420px; /* Altura expandida en hover */
 }
 
 /* Capa semitransparente sobre la imagen */
@@ -52,17 +54,22 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  /* Centramos el contenido inicial (logo y título) */
+  /* Centramos el contenido y luego lo ajustamos verticalmente */
   justify-content: center;
   align-items: center;
   text-align: center;
   height: 100%;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Lo bajamos un poco en el estado inicial */
+  transform: translateY(15%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transición para el cambio de alineación */
 }
 
 .service-overview-card:hover .card-content {
-  /* Al pasar el ratón, el contenido se desliza hacia arriba */
-  transform: translateY(-1%);
+  /* Al expandirse la tarjeta, centramos todo el contenido verticalmente.
+     Esto asegura que el ícono, título y la descripción que aparece
+     se mantengan como un bloque centrado. */
+  justify-content: center;
+  transform: translateY(0); /* Reseteamos la transformación para un centrado perfecto */
 }
 
 .card-content i {
@@ -81,18 +88,21 @@
 .card-content p {
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 1.5rem;
-  opacity: 0; /* El párrafo está oculto por defecto */
-  transition: opacity 0.3s ease;
+  opacity: 0; /* Oculto por defecto */
+  max-height: 0; /* Colapsado por defecto para no ocupar espacio */
   /* Limitamos el ancho para que no se vea mal en tarjetas anchas */
   max-width: 90%;
-}
+  /* Transición para opacidad y altura */
+  transition: opacity 0.4s ease-in-out 0.1s, max-height 0.4s ease-in-out;
+} 
 
 .card-action-button {
   color: var(--highlight-warm);
   text-decoration: none;
   font-weight: 600;
   opacity: 0; /* Oculto por defecto */
-  transition: opacity 0.3s ease, color 0.3s;
+  visibility: hidden; /* Oculto para no ocupar espacio */
+  transition: opacity 0.4s ease 0.1s, visibility 0.4s ease 0.1s, color 0.3s;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -102,12 +112,14 @@
 }
 
 .service-overview-card:hover .card-action-button {
-  opacity: 1; /* Se muestra en hover */
+  opacity: 1;
+  visibility: visible; /* Se muestra en hover */
 }
 
 /* El párrafo también se muestra en hover */
 .service-overview-card:hover .card-content p {
   opacity: 1;
+  max-height: 100px; /* Le damos altura para que se expanda y sea visible */
 }
 
 .card-action-button:hover {

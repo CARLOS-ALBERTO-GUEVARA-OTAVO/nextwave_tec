@@ -22,13 +22,11 @@ function App() {
          <section id="servicios" className="page-section">
           <Skills />
         </section>
-        
+        <section id="proyectos" className="page-section">
+          <Portfolio />   
+        </section>
         <section id="nosotros" className="page-section">
           <Sobre_mi />
-        </section>
-       
-        <section id="proyectos" className="page-section">
-          <Portfolio />
         </section>
         <section id="contacto" className="page-section">
           <Contact />

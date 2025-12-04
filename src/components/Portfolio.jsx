@@ -1,7 +1,10 @@
 import './Portfolio.css'; // Importamos el CSS del componente
 
 // 1. Importamos las imágenes de los proyectos desde la carpeta de assets
-import imgProyectoWeb from '../assets/proyecto_web.png'; // Usaremos esta imagen como placeholder
+import imgProyectoWeb from '../assets/proyecto_web.png';
+import imgProyecto2 from '../assets/Proyecto1.png';
+import imgProyecto3 from '../assets/Proyecto2.png';
+import imgProyecto4 from '../assets/Proyecto3.png'; // Usaremos esta imagen como placeholder
 
 const Portfolio = () => {
   // Arreglo de proyectos con la nueva estructura
@@ -10,36 +13,29 @@ const Portfolio = () => {
       title: 'Proyecto Web Desplegado',
       description: 'Este es el proyecto principal que está actualmente en producción. Incluye una descripción detallada de su funcionalidad y el stack tecnológico utilizado.',
       imageUrl: imgProyectoWeb, // Usamos la imagen importada
-      demoUrl: 'https://ejemplo.com/proyecto-desplegado', // Enlace al proyecto desplegado
+      demoUrl: 'https://flotaxagc.com/', // Enlace al proyecto desplegado
       repoUrl: null // No hay repositorio para este
     },
     {
-      title: 'Proyecto en GitHub 1',
+      title: 'Proyecto Soporte Biofix',
       description: 'Descripción del primer proyecto que se encuentra en GitHub. Ideal para mostrar tus habilidades en el backend o lógica de negocio.',
-      imageUrl: imgProyectoWeb, // Placeholder
+      imageUrl: imgProyecto2, // Placeholder
       demoUrl: null, // No hay demo pública
-      repoUrl: 'https://github.com/usuario/repositorio-1' // Enlace al repositorio
+      repoUrl: 'https://github.com/CARLOS-ALBERTO-GUEVARA-OTAVO/soporte_biofix' // Enlace al repositorio
     },
     {
-      title: 'Proyecto en GitHub 2',
+      title: 'Proyecto Gestor documental Biofix',
       description: 'Este proyecto muestra la implementación de una API RESTful. El código está documentado y listo para ser revisado.',
-      imageUrl: imgProyectoWeb, // Placeholder
+      imageUrl: imgProyecto3, // Placeholder
       demoUrl: null,
-      repoUrl: 'https://github.com/usuario/repositorio-2'
+      repoUrl: 'https://github.com/CARLOS-ALBERTO-GUEVARA-OTAVO/proyecto_gestor'
     },
     {
-      title: 'Proyecto en GitHub 3',
+      title: 'Proyecto de prestamos de herramientas',
       description: 'Una aplicación de consola o herramienta CLI desarrollada para automatizar tareas. Demuestra habilidades en scripting y desarrollo de herramientas.',
-      imageUrl: imgProyectoWeb, // Placeholder
+      imageUrl: imgProyecto4, // Placeholder
       demoUrl: null,
-      repoUrl: 'https://github.com/usuario/repositorio-3'
-    },
-    {
-      title: 'Proyecto en GitHub 4',
-      description: 'Este repositorio contiene un proyecto experimental o una prueba de concepto utilizando una nueva tecnología o framework.',
-      imageUrl: imgProyectoWeb, // Placeholder
-      demoUrl: null,
-      repoUrl: 'https://github.com/usuario/repositorio-4'
+      repoUrl: 'https://github.com/CARLOS-ALBERTO-GUEVARA-OTAVO/prestamo_herramientas'
     }
     // --- Agrega más proyectos aquí ---
   ];

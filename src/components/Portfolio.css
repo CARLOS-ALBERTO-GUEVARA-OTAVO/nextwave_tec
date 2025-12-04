@@ -4,7 +4,7 @@
 /* Contenedor para las tarjetas de proyecto */
 .portfolio-grid {
     display: grid;
-    /* Crea columnas de tamaño flexible, pero con un mínimo de 350px */
+    /* Crea columnas de tamaño flexible, pero con un mínimo de 300px */
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem; /* Espacio entre las tarjetas */
     margin-top: 3rem;
@@ -30,7 +30,7 @@
  
 .project-visual img {
     width: 100%;
-    height: 240px; /* Altura fija para la imagen/gif */
+    height: 200px; /* Altura fija para la imagen/gif */
     object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
     display: block;
     border-bottom: 1px solid #e9ecef;
@@ -44,7 +44,7 @@
 }
  
 .project-info h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 0.75rem;
     color: #1c2a39;
@@ -52,7 +52,7 @@
  
 .project-info p {
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.4;
     color: #5a6a7b;
     flex-grow: 1; /* Ocupa el espacio disponible para alinear botones */
     margin-bottom: 1.5rem;
@@ -70,7 +70,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;

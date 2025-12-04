@@ -1,129 +1,351 @@
-.about-section {
-  /* Eliminamos padding y background */
+/* Variables de color (Asegúrate de que estén definidas en tu CSS global, ej: :root) */
+:root {
+  --primary-color: #00a99d; /* Un verde azulado vibrante */
+  --background-dark: #1a1a2e;
+  --background-card: rgba(26, 26, 46, 0.6); /* Fondo de tarjeta semitransparente */
+  --text-light: #e0e0e0;
+  --text-secondary: #a0a0c0;
+  --shadow-color: rgba(0, 169, 157, 0.3);
+}
+
+/* ==========================================================================
+   Sección Sobre Nosotros
+   ========================================================================== */
+.about-us-section {
+  padding: 6rem 2rem;
   text-align: center;
-  padding: 0;
+  background: linear-gradient(160deg, #16222a 0%, #3a6073 100%);
+  overflow: hidden;
 }
 
-.section-subtitle {
-  max-width: 700px;
-  margin: 0 auto 3rem;
-  font-size: 1.1rem;
-  color: #554E47; /* Tono café oscuro / gris cálido */
-  line-height: 1.7;
-}
-
-.founders-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column; /* Apilamos las tarjetas verticalmente */
-  gap: 2.5rem;
+.about-us-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.founder-profile {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  background-color: #FBF8ED; /* Fondo crema claro / beige */
-  border-radius: 16px;
-  padding: 1.5rem;
-  border: 1px solid #eef2f5;
-  transition: all 0.3s ease;
-  border-left: 5px solid transparent;
+.about-us-header {
+  margin-bottom: 4rem;
 }
 
-/* Estilo para invertir el layout de la tarjeta */
-.founder-profile.reverse-layout {
-  flex-direction: row-reverse;
-  border-left: none; /* Quitamos el borde izquierdo inicial */
-  border-right: 5px solid transparent; /* Lo pasamos a la derecha */
-}
-.founder-profile:hover {
-  border-left-color: #FCC683; /* Naranja suave / durazno */
-  transform: translateX(10px);
-  box-shadow: 0 10px 30px rgba(2, 2, 1, 0.1); /* Sombra basada en negro */
+.about-us-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
 }
 
-.founder-profile.reverse-layout:hover {
-  border-right-color: #FCC683; /* Aplicamos el color al borde derecho en hover */
-  transform: translateX(-10px); /* Movemos en la dirección opuesta */
-}
-
-.founder-photo-wrapper {
-  flex-shrink: 0; /* Evita que la imagen se encoja */
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(2, 2, 1, 0.1); /* Sombra basada en negro */
-}
-
-.founder-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.founder-profile:hover .founder-photo {
-  transform: scale(1.1);
-}
-
-.founder-details h3 {
-  font-size: 1.5rem;
-  color: #020201; /* Negro absoluto */
-  margin: 0;
-}
-
-.founder-details h4 {
-  color: #FCC683; /* Naranja suave / durazno */
-  font-weight: 600;
-  margin-top: 0.25rem;
-  margin-bottom: 0.75rem;
-}
-
-.founder-details p {
-  color: #554E47; /* Tono café oscuro / gris cálido */
-  font-size: 1rem;
+.about-us-subtitle {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-light);
   line-height: 1.6;
 }
 
-.social-links {
-  margin-top: 1.5rem;
+/* ==========================================================================
+   Contenedor de las Tarjetas
+   ========================================================================== */
+.about-cards-container {
   display: flex;
-  gap: 1.5rem;
-}
-
-.social-links a {
-  color: #554E47; /* Tono café oscuro / gris cálido */
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: #FCC683; /* Naranja suave / durazno */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
 }
 
 /* ==========================================================================
-   Media Queries para Responsividad
+   Tarjeta de Perfil
    ========================================================================== */
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--background-card);
+  backdrop-filter: blur(10px); /* Efecto de cristal esmerilado */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeIn 0.8s ease-out forwards;
+}
 
-@media (max-width: 768px) {
-  .founder-profile,
-  .founder-profile.reverse-layout {
-    flex-direction: column; /* Apilamos imagen y texto verticalmente */
-    text-align: center;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-
-  .founder-profile:hover,
-  .founder-profile.reverse-layout:hover {
-    transform: translateY(-8px) translateX(0); /* Ajustamos la animación para móvil */
-    border-left-color: #FCC683;
-    border-right-color: transparent; /* Evitamos borde derecho en móvil */
-  }
-
-  .social-links {
-    justify-content: center; /* Centramos los iconos sociales */
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+/* Iluminación de fondo en hover */
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.about-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.about-card:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* ==========================================================================
+   Foto del Fundador
+   ========================================================================== */
+.about-card-header, .about-card-body {
+  position: relative; /* Para que el contenido esté sobre el ::before */
+  z-index: 1;
+}
+
+.about-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 10px 30px var(--shadow-color);
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.about-card:hover .about-photo {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Detalles del Fundador
+   ========================================================================== */
+.about-card-body h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.about-card-body h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-card-body p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.about-social-links a {
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  margin: 0 0.75rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.about-social-links a:hover {
+  color: var(--primary-color);
+  transform: translateY(-4px);
+}
+ar-gradient(160deg, #16222a 0%, #3a6073 100%);
+  overflow: hidden;
+}
+
+.about-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-us-header {
+  margin-bottom: 4rem;
+}
+
+.about-us-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.about-us-subtitle {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Contenedor de las Tarjetas
+   ========================================================================== */
+.about-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+/* ==========================================================================
+   Tarjeta de Perfil
+   ========================================================================== */
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--background-card);
+  backdrop-filter: blur(10px); /* Efecto de cristal esmerilado */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Iluminación de fondo en hover */
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.about-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.about-card:hover::before {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* ==========================================================================
+   Foto del Fundador
+   ========================================================================== */
+.about-card-header, .about-card-body {
+  position: relative; /* Para que el contenido esté sobre el ::before */
+  z-index: 1;
+}
+
+.about-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 10px 30px var(--shadow-color);
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.about-card:hover .about-photo {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Detalles del Fundador
+   ========================================================================== */
+.about-card-body h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.about-card-body h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-card-body p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.about-social-links a {
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  margin: 0 0.75rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.about-social-links a:hover {
+  color: var(--primary-color);
+  transform: translateY(-4px);
+}
+
+/* ==========================================================================
+   Responsividad para Móviles
+   ========================================================================== */
+@media (max-width: 768px) {
+  .about-us-section {
+    padding: 4rem 1rem;
+  }
+
+  .about-us-title {
+    font-size: 2.2rem;
+  }
+
+  .about-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-card-body h3 {
+    font-size: 1.6rem;
+  }
+}
+

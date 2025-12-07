@@ -5,6 +5,7 @@ import './Skills.css'; // Importamos el CSS del componente
 // Importamos los estilos del carrusel
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import 'bootstrap-icons/font/bootstrap-icons.css'; // Importamos los íconos para que las flechas funcionen
 
 // --- IMPORTANTE ---
 // Debes crear estas imágenes y ponerlas en tu carpeta de assets.
@@ -79,10 +80,12 @@ const Services = () => {
 
   return (
     <section id="servicios" className="services-section">
-      <h2 className="section-title">Nuestros Servicios</h2>
-      <p className="section-subtitle">
-        Entendemos tus necesidades y las transformamos en soluciones tecnológicas robustas y eficientes. Explora cómo podemos ayudarte a alcanzar tus objetivos.
-      </p>
+      <div className="section-header">
+        <h2 className="section-title">Nuestros Servicios</h2>
+        <p className="section-subtitle">
+          Entendemos tus necesidades y las transformamos en soluciones tecnológicas robustas y eficientes. Explora cómo podemos ayudarte a alcanzar tus objetivos.
+        </p>
+      </div>
       <Slider {...settings}>
         {services.map((service, index) => (
           <div key={index} className="service-slide">
@@ -95,8 +98,8 @@ const Services = () => {
                 <i className={service.icon}></i>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <a href="#contacto" className="card-action-button">
-                  Me Interesa <i className="bi bi-cursor-fill"></i>
+                <a href="#contacto" className="card-action-button" onClick={(e) => e.stopPropagation()}>
+                  Saber más... <i className="bi bi-arrow-right-short"></i>
                 </a>
               </div>
             </div>

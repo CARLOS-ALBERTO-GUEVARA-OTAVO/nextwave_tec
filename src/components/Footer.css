@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Sección Principal del Footer
+   ========================================================================== */
+.footer-section {
+  background: linear-gradient(to right, #020201, #1a1a1a); /* Gradiente oscuro como el header */
+  color: #a0a0a0; /* Texto gris claro para legibilidad */
+  padding: 4rem 5% 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Damos más espacio mínimo a cada columna */
+  gap: 3rem; /* Aumentamos la separación entre columnas */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Línea decorativa debajo de los títulos */
+.footer-column h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary-color, #d7942d);
+}
+
+/* ==========================================================================
+   Columnas Individuales
+   ========================================================================== */
+
+/* Columna "About" */
+.footer-column.about .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.footer-column.about .footer-logo img {
+  max-height: 45px;
+}
+
+.footer-column.about .footer-logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.footer-column.about p {
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+/* Columna de Enlaces */
+.footer-column.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column.links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-column.links a {
+  color: #a0a0a0;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-column.links a:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+/* Columna de Contacto */
+.footer-column.contact p {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  /* Permite que el texto largo (como el email) se divida para evitar desbordamiento */
+  word-break: break-word;
+}
+
+.footer-column.contact i {
+  color: var(--primary-color, #d7942d);
+}
+
+/* Columna de Redes Sociales */
+.footer-social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social-icons a {
+  color: #a0a0a0;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   Barra Inferior de Copyright
+   ========================================================================== */
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+  color: #777;
+}

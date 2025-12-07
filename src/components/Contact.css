@@ -1,13 +1,12 @@
 /* Variables de color (Asegúrate de que estén definidas en tu CSS global, ej: :root) */
 :root {
-  --primary-color: #00a99d; /* Un verde azulado vibrante */
-  --background-dark: #1a1a2e;
-  --background-card: rgba(26, 26, 46, 0.6); /* Fondo de tarjeta semitransparente */
-  --text-light: #e0e0e0;
-  --text-secondary: #a0a0c0;
-  --shadow-color: rgba(0, 169, 157, 0.3);
-  --gradient-start: #16222a;
-  --gradient-end: #3a6073;
+  --primary-dark: #020201;    /* Negro para textos principales */
+  --secondary-dark: #554E47; /* Gris oscuro para textos secundarios */
+  --primary-color: #d7942d; /* Dorado/Naranja se mantiene como acento */
+  --primary-color-light: #ffd700; /* Dorado claro para hover */
+  --light-bg: #ffffff;       /* Fondo blanco */
+  --card-bg: #f9f9f9;       /* Fondo ligeramente gris para tarjetas */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 /* ==========================================================================
@@ -16,15 +15,15 @@
 .contact-section {
   padding: 6rem 2rem;
   text-align: center;
-  background: linear-gradient(160deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background-color: var(--light-bg);
   overflow: hidden;
-  color: var(--text-light);
+  color: var(--primary-dark);
 }
 
 .contact-section .section-title {
   font-size: 2.8rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--primary-dark);
   margin-bottom: 1rem;
 }
 
@@ -32,7 +31,7 @@
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto 4rem auto;
-  color: var(--text-light);
+  color: var(--secondary-dark);
   line-height: 1.6;
 }
 
@@ -56,16 +55,15 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: var(--background-card);
-  backdrop-filter: blur(10px); /* Efecto de cristal esmerilado */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--card-bg);
+  border: 1px solid #eee;
   border-radius: 20px;
   padding: 2.5rem 2rem;
   width: 100%;
   max-width: 450px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeIn 0.8s ease-out forwards;
 }
 
@@ -96,7 +94,7 @@
 
 .contact-card:hover {
   transform: translateY(-15px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px var(--shadow-color);
 }
 
 .contact-card:hover::before {
@@ -108,20 +106,20 @@
   z-index: 1;
 }
 
-.contact-card i {
+.contact-card > i {
   font-size: 3.5rem;
   color: var(--primary-color);
   margin-bottom: 1.5rem;
   transition: transform 0.3s ease;
 }
 
-.contact-card:hover i {
+.contact-card:hover > i {
   transform: scale(1.1);
 }
 
 .contact-card h3 {
   font-size: 1.8rem;
-  color: #fff;
+  color: var(--primary-dark);
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
@@ -129,38 +127,87 @@
 .contact-card p {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--text-light);
+  color: var(--secondary-dark);
   margin-bottom: 1.5rem;
 }
 
 .email-address {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 0.75rem; /* Espacio entre el ícono y el texto */
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
   padding: 0.75rem 1.25rem;
   border-radius: 8px;
   margin-bottom: 1.5rem;
   font-family: 'Fira Code', monospace; /* Monospace font for code-like text */
-  color: var(--primary-color);
+  color: var(--secondary-dark);
   font-size: 0.95rem;
   word-break: break-all; /* Ensures long emails break correctly */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.email-address:hover {
+  border-color: var(--primary-color);
+  background-color: #fdfdfd;
+}
+
+.copy-feedback {
+  color: var(--secondary-dark); /* Color gris oscuro por defecto */
+  font-weight: bold;
+  font-size: 0.9rem; /* Hacemos el texto/ícono un poco más pequeño */
+  transition: color 0.2s ease;
+}
+
+.email-address:hover .copy-feedback {
+  color: var(--primary-color); /* El ícono se vuelve dorado en hover */
 }
 
 .contact-button {
-  display: inline-block;
+  display: inline-flex; /* Cambiamos a inline-flex para alinear el ícono */
+  align-items: center;
+  gap: 0.75rem; /* Espacio entre el ícono y el texto */
   background-color: var(--primary-color);
-  color: var(--background-dark);
-  padding: 0.8rem 2rem;
+  color: var(--primary-dark);
+  padding: 0.6rem 1.5rem; /* Hacemos el botón aún más pequeño */
   border-radius: 50px;
   text-decoration: none;
+  font-size: 0.9rem; /* Ajustamos la fuente al nuevo tamaño */
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  position: relative; /* Necesario para el efecto de brillo */
+  overflow: hidden; /* Oculta el brillo que se sale del botón */
+}
+
+/* Estilos para el ícono dentro del botón */
+.contact-button i {
+  font-size: 1rem; /* Tamaño del ícono */
+  opacity: 1; /* Aseguramos que sea visible por defecto */
+}
+
+/* Efecto de brillo que se mueve por el botón en hover */
+.contact-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
 }
 
 .contact-button:hover {
-  background-color: #00d4c3; /* Lighter shade of primary color */
+  background-color: #c58528; /* Un tono dorado más oscuro y elegante */
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.contact-button:hover::before {
+  left: 100%; /* Mueve el brillo de izquierda a derecha */
 }
 
 /* ==========================================================================

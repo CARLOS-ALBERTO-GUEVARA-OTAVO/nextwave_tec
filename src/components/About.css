@@ -3,7 +3,8 @@
    ========================================================================== */
 
 .company-about-container {
-  padding: 0;
+  padding: 6rem 2rem;
+  background-color: var(--light-bg);
 }
 
 /* ==========================================================================
@@ -49,7 +50,7 @@
 .about-info-column .about-intro {
   font-size: 1.2rem;
   line-height: 1.7;
-  color: var(--gray-text);
+  color: var(--secondary-dark);
   max-width: 650px;
 }
 
@@ -65,19 +66,20 @@
 }
 
 .cta-button-main {
-  background: linear-gradient(45deg, var(--highlight-warm), #fca652);
+  background: var(--primary-color, #d7942d);
   color: var(--primary-dark);
   padding: 12px 28px;
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(252, 166, 82, 0.4);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .cta-button-main:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(252, 166, 82, 0.5);
+  background-color: var(--primary-color-light, #ffd700);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .social-media-links {
@@ -92,7 +94,7 @@
 }
 
 .social-media-links a:hover {
-  color: var(--highlight-warm);
+  color: var(--primary-color, #d7942d);
   transform: scale(1.2);
 }
 
@@ -111,20 +113,20 @@
 .pillar-card {
   text-align: center;
   padding: 1.5rem;
-  background-color: var(--light-bg);
+  background-color: var(--card-bg);
   border-radius: 16px;
-  border-top: 4px solid var(--highlight-warm-light); /* Un tono más claro para diferenciar */
+  border-top: 4px solid var(--primary-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pillar-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px var(--shadow);
+  box-shadow: 0 8px 20px var(--shadow-color);
 }
 
 .pillar-card i {
   font-size: 2.5rem;
-  color: var(--highlight-warm);
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
@@ -151,11 +153,11 @@
    ========================================================================== */
 
 .service-overview-card {
-  background-color: var(--light-bg);
+  background-color: var(--card-bg);
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 8px 25px var(--shadow);
-  border-top: 4px solid var(--highlight-warm);
+  box-shadow: 0 8px 25px var(--shadow-color);
+  border-top: 4px solid var(--primary-color);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -163,12 +165,12 @@
 
 .service-overview-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 35px var(--shadow-hover); /* Usando una variable para la sombra en hover */
+  box-shadow: 0 12px 35px var(--shadow-color);
 }
 
 .service-overview-card i {
   font-size: 2.5rem;
-  color: var(--highlight-warm);
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
@@ -219,6 +221,3 @@
     padding: 1.5rem; /* Menos padding en tarjetas para móviles */
   }
 }
-
-/* Variable de color adicional que podría ser útil en tu archivo principal de CSS */
-/* :root { --highlight-warm-light: #fde4cf; } */

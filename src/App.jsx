@@ -1,13 +1,14 @@
 import React from 'react';
 import Header from './components/Header';
 import About from './components/About';
-import Sobre_mi from './components/sobre_mi';
+import Sobre_mi from './components/Sobre_mi';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Download from './components/Download';
+import Footer from './components/Footer'; // Importamos el Footer
 import './App.css';
 
 function App() {
@@ -33,10 +34,11 @@ function App() {
         </section>
       </main>
       <footer>
-        <p>© 2025 Carlos Alberto Guevara Otavo. Todos los derechos reservados.</p>
+        <Footer /> {/* Añadimos el Footer al final de la página */}
       </footer>
     </div>
   );
 }
 
 export default App;
+

@@ -2,14 +2,17 @@
    Contenedor Principal de la Sección de Servicios
    ========================================================================== */
 .services-section {
+  background-color: var(--light-bg);
+  padding: 4rem 2rem;
   /* Hereda los estilos de .page-section, pero podemos añadir overrides aquí si es necesario */
   padding-bottom: 4rem; /* Más espacio inferior para los puntos del carrusel */
 }
 
 /* Nuevo contenedor para el encabezado de la sección */
 .section-header {
-  text-align: left; /* Alineamos todo a la izquierda */
-  margin-bottom: 2.5rem; /* Espacio antes del carrusel */
+  text-align: center; /* Centramos el texto para un look más formal */
+  max-width: 700px; /* Limitamos un poco más el ancho para que las líneas no sean tan largas */
+  margin: 0 auto 4rem auto; /* Centramos el contenedor y añadimos margen inferior */
 }
 
 /* Estilo para el título principal */
@@ -28,11 +31,12 @@
   left: 0;
   width: 50%; /* La línea ocupa la mitad del ancho del título */
   height: 3px;
-  background-color: var(--highlight-teal, #00d1b2); /* Nuevo color de acento más creativo */
+  background-color: var(--primary-color, #d7942d); /* Color de acento dorado */
 }
 
 .section-header .section-subtitle {
-  max-width: 600px; /* Limitamos el ancho del subtítulo para mejor legibilidad */
+  font-size: 1.1rem; /* Hacemos el texto un poco más grande */
+  color: var(--secondary-dark); /* Un tono más suave para el subtítulo */
 }
 
 /* ==========================================================================
@@ -47,17 +51,19 @@
   position: relative;
   height: 250px; /* Altura inicial reducida */
   border-radius: 16px;
-  overflow: hidden; /* Oculta lo que se salga de la tarjeta (para el zoom) */
-  color: var(--white);
-  background-size: cover;
+  overflow: hidden; 
+  color: var(--text-light, #f0f0f0); /* Texto claro para que contraste con el fondo oscuro */
+  background-color: #1a1a1a; /* Color de fondo base si la imagen no carga */
+  background-size: 120%; /* Imagen ligeramente más grande para efecto de movimiento */
   background-position: center;
   /* Transición para la altura y la transformación */
-  transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.3s ease-in-out;
+  transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.3s ease-in-out, background-size 0.4s ease;
 }
 
 .service-overview-card:hover {
   transform: scale(1.05); /* Zoom ligeramente más pronunciado */
   height: 420px; /* Altura expandida en hover */
+  background-size: 125%; /* Hacemos un ligero zoom a la imagen de fondo */
 }
 
 /* Capa semitransparente sobre la imagen */
@@ -67,9 +73,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(13, 26, 46, 0.9) 0%, rgba(13, 26, 46, 0.5) 100%);
+  /* El gradiente ahora es más sutil y se activa en hover */
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.98) 20%, rgba(10, 10, 10, 0.7) 60%, rgba(10, 10, 10, 0.5) 100%);
   z-index: 1;
+  opacity: 1; /* Siempre visible para garantizar legibilidad */
   transition: background 0.4s ease;
+}
+
+/* La imagen de fondo se revela en hover a través de la opacidad del overlay */
+.service-overview-card:hover .card-overlay {
+  background: linear-gradient(to top, rgba(10, 10, 10, 1) 30%, rgba(10, 10, 10, 0.75) 70%, rgba(10, 10, 10, 0.6) 100%);
 }
 
 /* Contenido de la tarjeta */
@@ -86,35 +99,32 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100%;
-  /* Lo bajamos un poco en el estado inicial */
-  transform: translateY(15%);
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transición para el cambio de alineación */
+  height: 100%; 
+  /* Centrado verticalmente en el estado inicial */
+  justify-content: center;
+  transition: justify-content 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .service-overview-card:hover .card-content {
-  /* Al expandirse la tarjeta, centramos todo el contenido verticalmente.
-     Esto asegura que el ícono, título y la descripción que aparece
-     se mantengan como un bloque centrado. */
+  /* Al expandirse, el contenido se alinea arriba para dar espacio a la descripción */
   justify-content: center;
-  transform: translateY(0); /* Reseteamos la transformación para un centrado perfecto */
 }
 
 .card-content i {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: var(--white); /* Cambiado a blanco para mejor contraste */
+  color: #fff; /* Icono en blanco puro para un look más limpio y elegante */
 }
 
 .card-content h3 {
   font-size: 1.7rem;
   margin-bottom: 0.5rem;
-  color: var(--white);
+  color: #fff;
   line-height: 1.2;
 }
 
 .card-content p {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(240, 240, 240, 0.85); /* Texto de descripción ligeramente más tenue */
   margin-bottom: 1.5rem;
   opacity: 0; /* Oculto por defecto */
   max-height: 0; /* Colapsado por defecto para no ocupar espacio */
@@ -126,19 +136,18 @@
 
 .card-action-button {
   /* Estilos del nuevo botón */
-  background-color: var(--highlight-teal, #00d1b2);
-  color: var(--primary-dark, #0a192f);
-  padding: 0.6rem 1.5rem;
-  border-radius: 50px; /* Botón con bordes redondeados */
+  background-color: transparent;
+  color: var(--primary-color, #d7942d); /* Texto en dorado principal, más sobrio */
+  border: none; /* Sin borde */
+  padding: 0.5rem 0; /* Padding vertical para que sea fácil hacer clic */
   text-decoration: none;
   font-weight: 600;
   opacity: 0; /* Oculto por defecto */
   visibility: hidden; /* Oculto para no ocupar espacio */
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   display: flex;
   align-items: center;
-  border: none;
-  transform: translateY(10px); /* Empieza ligeramente abajo para efecto de subida */
+  transform: translateY(10px);
 }
 
 /* El ícono de la flecha dentro del botón */
@@ -153,6 +162,7 @@
 .service-overview-card:hover .card-action-button {
   opacity: 1;
   visibility: visible; /* Se muestra en hover */
+  transform: translateY(0); /* Sube a su posición final */
 }
 
 /* Al pasar el ratón sobre el botón, se expande para mostrar la flecha */
@@ -169,8 +179,9 @@
 }
 
 .card-action-button:hover {
-  background-color: var(--highlight-teal-hover, #00b89c); /* Versión más oscura para el hover */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: #fff; /* El texto se vuelve blanco en hover para un look más limpio */
+  /* Efecto de crecimiento sutil */
+  transform: scale(1.05) translateY(0);
 }
 
 /* ==========================================================================
@@ -183,13 +194,13 @@
 
 .slick-dots li button:before {
   font-size: 12px;
-  color: var(--secondary-dark);
+  color: var(--secondary-dark); /* Puntos en gris */
   opacity: 0.5;
   transition: all 0.3s ease;
 }
 
 .slick-dots li.slick-active button:before {
-  color: var(--highlight-teal, #00d1b2); /* Usamos el nuevo color de acento */
+  color: var(--primary-color, #d7942d); /* Punto activo en dorado */
   opacity: 1;
 }
 
@@ -197,25 +208,33 @@
    Personalización de las flechas (arrows) del carrusel
    ========================================================================== */
 
-/* Eliminamos la dependencia de la fuente de íconos y dibujamos las flechas con CSS */
-.slick-prev:before,
-.slick-next:before {
-  content: '';
-  display: block;
-  border: solid var(--primary-dark, #0a192f);
-  border-width: 0 3px 3px 0;
-  padding: 4px;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+/* Reseteamos el estilo por defecto de la librería para eliminar el ícono "fantasma" */
+.slick-prev, .slick-next {
+  font-size: 0;
+  line-height: 0;
 }
 
-/* Rotamos los bordes para formar las flechas */
-.slick-prev:before {
-  transform: rotate(135deg);
+.slick-prev::before,
+.slick-next::before {
+  content: ''; /* Vaciamos el contenido para crear la flecha con bordes */
+  display: inline-block;
+  border-style: solid;
+  border-color: #000; /* Color negro para la flecha */
+  border-width: 0 3px 3px 0; /* Grosor del borde que forma la flecha */
+  padding: 5px; /* Tamaño de la flecha */
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
-.slick-next:before {
-  transform: rotate(-45deg);
+.slick-prev::before {
+  /* Posicionamos y rotamos para crear la flecha izquierda */
+  transform: translate(-25%, -50%) rotate(135deg);
+}
+
+.slick-next::before {
+  /* Posicionamos y rotamos para crear la flecha derecha */
+  transform: translate(-75%, -50%) rotate(-45deg);
 }
 
 /* Estilos para hacer las flechas más visibles */
@@ -223,21 +242,17 @@
 .slick-next {
   width: 45px;
   height: 45px;
-  background-color: var(--white);
+  background-color: #ffffff; /* Fondo blanco sólido para máximo contraste */
   border-radius: 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   z-index: 30; /* Aumentamos el z-index para máxima prioridad */
   top: 50%; /* Centramos verticalmente */
-  transform: translateY(-50%); /* Ajuste fino para el centrado vertical */
+  transform: translateY(-50%); /* Ajuste para centrado vertical perfecto */
 }
 
-.slick-prev:hover:before,
-.slick-next:hover:before {
-  opacity: 1;
-}
 .slick-prev:hover,
 .slick-next:hover {
-  background-color: #f1f1f1;
+  background-color: #f0f0f0; /* Un gris muy claro en hover */
 }
 
 /* Ajuste de posición de las flechas */

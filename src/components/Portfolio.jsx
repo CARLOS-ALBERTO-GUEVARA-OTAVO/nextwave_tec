@@ -11,7 +11,7 @@ const Portfolio = () => {
   const projects = [
     {
       title: 'App de Gestión de Flotas: Flotaxa AGC',
-      description: 'Plataforma web para la gestión logística de flotas que permite el seguimiento de vehículos en tiempo real, la asignación de rutas y la generación de reportes analíticos para optimizar operaciones.',
+      description: 'Plataforma web para el control de documentación vehicular. Permite configurar recordatorios para la renovación de licencias y SOAT, y consultar multas de tránsito para mantener todo al día.',
       imageUrl: imgProyectoWeb, // Usamos la imagen importada
       demoUrl: 'https://flotaxagc.com/', // Enlace al proyecto desplegado
       repoUrl: null // No hay repositorio para este

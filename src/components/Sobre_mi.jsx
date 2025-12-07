@@ -22,24 +22,35 @@ const foundersData = [
     photo: fotoTecnico,
     linkedin: '#', // Reemplazar con el link real
     github: '#', // Reemplazar con el link real
+    photoClassName: 'haider-photo-adjustment', // Clase específica para ajustar su foto
   },
 ];
 
 // Componente para el perfil individual para no repetir código
-const FounderProfile = ({ name, role, description, photo, linkedin, github }) => (
+const FounderProfile = ({ name, role, description, photo, linkedin, github, photoClassName }) => (
   <div className="about-card">
     <div className="about-card-header">
-      <img src={photo} alt={`Foto de ${name}`} className="about-photo" />
+      <img src={photo} alt={`Foto de ${name}`} className={`about-photo ${photoClassName || ''}`} />
     </div>
     <div className="about-card-body">
       <h3>{name}</h3>
       <h4>{role}</h4>
       <p>{description}</p>
       <div className="about-social-links">
-        <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <a 
+          href={linkedin} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="LinkedIn"
+          className={linkedin === '#' ? 'disabled' : ''}>
           <i className="bi bi-linkedin" />
         </a>
-        <a href={github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <a 
+          href={github} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="GitHub"
+          className={github === '#' ? 'disabled' : ''}>
           <i className="bi bi-github" />
         </a>
       </div>
@@ -67,6 +78,7 @@ const Sobre_mi = () => {
               photo={founder.photo}
               linkedin={founder.linkedin}
               github={founder.github}
+              photoClassName={founder.photoClassName}
             />
           ))}
         </div>

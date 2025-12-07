@@ -1,6 +1,13 @@
 /* ==========================================================================
    Contenedor de la Sección de Proyectos
    ========================================================================== */
+.portfolio-section {
+  padding: 6rem 2rem;
+  text-align: center;
+  background-color: var(--light-bg);
+  overflow: hidden;
+}
+
 /* Contenedor para las tarjetas de proyecto */
 .portfolio-grid {
     display: grid;
@@ -14,7 +21,7 @@
    Estilos de la Ficha de Proyecto
    ========================================================================== */
 .project-card {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 16px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     overflow: hidden;
@@ -25,7 +32,7 @@
  
 .project-card:hover {
     transform: translateY(-8px); /* Efecto de levitación más notorio */
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 40px var(--shadow-color);
 }
  
 .project-visual img {
@@ -33,7 +40,7 @@
     height: 200px; /* Altura fija para la imagen/gif */
     object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
     display: block;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid #eee;
 }
  
 .project-info {
@@ -47,13 +54,13 @@
     font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 0.75rem;
-    color: #1c2a39;
+    color: var(--primary-dark);
 }
  
 .project-info p {
     font-size: 0.95rem;
     line-height: 1.4;
-    color: #5a6a7b;
+    color: var(--secondary-dark);
     flex-grow: 1; /* Ocupa el espacio disponible para alinear botones */
     margin-bottom: 1.5rem;
 }
@@ -82,19 +89,19 @@
  
 /* Botón para "Ver Proyecto" */
 .project-button.demo {
-    background-color: #007bff;
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--primary-dark);
 }
  
 .project-button.demo:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-color-light, #ffd700);
     transform: translateY(-2px);
 }
  
 /* Botón para "Ver Código" en GitHub */
 .project-button.github {
     background-color: #24292e; /* Color oscuro de GitHub */
-    color: #ffffff;
+    color: #fff;
 }
  
 .project-button.github:hover {

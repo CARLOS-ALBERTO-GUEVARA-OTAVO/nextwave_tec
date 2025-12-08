@@ -28,8 +28,8 @@ function About() {
             <div className="social-media-links">
               <a href="https://www.linkedin.com/in/carlos-guevara-84a697380/" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
               <a href="https://github.com/CARLOS-ALBERTO-GUEVARA-OTAVO" aria-label="GitHub"><i className="bi bi-github"></i></a>
-             
-              <a href="#" aria-label="Instagram"><i className="bi bi-instagram"></i></a>
+              <a href="https://www.instagram.com/next.wavetechnologies?igsh=MWh1Ym1iZ3Flem4zbA==" aria-label="Instagram"><i className="bi bi-instagram"></i></a>
+              
             </div>
           </div>
         </div>

@@ -198,3 +198,9 @@
     font-size: 1.6rem;
   }
 }
+
+@media (max-width: 480px) {
+  .about-us-title {
+    font-size: 1.8rem; /* Reducir aún más para pantallas muy pequeñas */
+  }
+}

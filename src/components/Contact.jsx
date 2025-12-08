@@ -57,9 +57,9 @@ const Contact = () => {
           <h3>Otras Vías de Contacto</h3>
           <p>También puedes encontrarnos y conversar con nosotros en nuestras redes sociales.</p>
           <div className="contact-social-icons">
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i className="bi bi-whatsapp"></i></a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i className="bi bi-telegram"></i></a>
+            <a href="https://www.linkedin.com/in/carlos-guevara-84a697380/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/573144312796" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i className="bi bi-whatsapp"></i></a>
+            <a href="https://www.instagram.com/next.wavetechnologies?igsh=MWh1Ym1iZ3Flem4zbA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="bi bi-instagram"></i></a>
           </div>
         </div>
       </div>

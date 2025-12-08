@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer-column about">
           <div className="footer-logo">
             <img src={logoEmpresa} alt="Logo NextWave" />
-            <span className="footer-logo-text">TNW</span>
+            <span className="footer-logo-text">NWT</span>
           </div>
           <p>Transformamos tus ideas en soluciones tecnológicas robustas y eficientes, construyendo el futuro digital de tu negocio.</p>
         </div>
@@ -31,15 +31,16 @@ const Footer = () => {
         <div className="footer-column contact">
           <h4>Contacto</h4>
           <p><i className="bi bi-envelope-fill"></i> nextwavetechnologiesjc@gmail.com</p>
-          <p><i className="bi bi-whatsapp"></i> (+57) 300 123 4567</p> {/* Placeholder */}
+          <p><i className="bi bi-whatsapp"></i> (+57) 314 431 2796</p> {/* Placeholder */}
         </div>
 
         {/* Columna de Redes Sociales */}
         <div className="footer-column social">
           <h4>Síguenos</h4>
           <div className="footer-social-icons">
-            <a href="#" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
-            <a href="#" aria-label="GitHub"><i className="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/carlos-guevara-84a697380/" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
+            <a href="https://github.com/CARLOS-ALBERTO-GUEVARA-OTAVO" aria-label="GitHub"><i className="bi bi-github"></i></a>
+            <a href="https://www.tiktok.com/@nextwave.technolo?_r=1&_t=ZS-91mejfumB2v" aria-label="TikTok"><i className="bi bi-tiktok"></i></a>
           </div>
         </div>
       </div>

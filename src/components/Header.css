@@ -144,3 +144,84 @@ body {
   transform: translateY(-1px); /* Se hunde un poco */
   box-shadow: 0 2px 10px rgba(252, 198, 131, 0.4);
 }
+
+/* ==========================================================================
+   Menú Hamburguesa y Lógica Responsiva (CSS-Only)
+   ========================================================================== */
+
+/* Ocultamos el checkbox y el botón de hamburguesa en escritorio */
+.menu-toggle,
+.hamburger {
+  display: none;
+  z-index: 1002; /* Asegura que esté por encima del menú */
+}
+
+/* --- Media Query para Tablets y Móviles --- */
+@media (max-width: 992px) {
+  /* Mostramos el botón de hamburguesa */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 2.5rem; /* Icono grande y fácil de tocar */
+    color: #ffffff;
+  }
+
+  /* Por defecto, mostramos el ícono de lista (abrir) y ocultamos el de 'x' (cerrar) */
+  .hamburger .bi-x {
+    display: none;
+  }
+  .hamburger .bi-list {
+    display: block;
+  }
+
+  /* Cuando el menú está abierto (checkbox marcado), invertimos los íconos */
+  .menu-toggle:checked + .hamburger .bi-list {
+    display: none;
+  }
+  .menu-toggle:checked + .hamburger .bi-x {
+    display: block;
+  }
+
+  /* Ocultamos la navegación de escritorio y la preparamos para el modo móvil */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Empieza fuera de la pantalla */
+    width: min(75%, 400px); /* Ancho adaptable con un máximo */
+    height: 100vh;
+    background-color: rgba(2, 2, 1, 0.9); /* Usamos el mismo fondo del header con scroll */
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    /* Ocultamos los elementos del menú al inicio para la animación */
+    .nav-links a, .cta-button {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  }
+
+  .nav-links {
+    flex-direction: column;
+  }
+
+  /* Hacemos el botón de contacto más pequeño dentro del menú móvil */
+  .main-nav .cta-button {
+    padding: 0.7rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  /* Magia del CSS: Cuando el checkbox está activo, deslizamos el menú para mostrarlo */
+  .menu-toggle:checked ~ .main-nav {
+    right: 0;
+    /* Activamos la animación de entrada escalonada para los elementos */
+    .nav-links a:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateX(0); }
+    .nav-links a:nth-child(2) { transition-delay: 0.15s; opacity: 1; transform: translateX(0); }
+    .nav-links a:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateX(0); }
+    .nav-links a:nth-child(4) { transition-delay: 0.25s; opacity: 1; transform: translateX(0); }
+    .cta-button { transition-delay: 0.35s; opacity: 1; transform: translateX(0); }
+  }
+}

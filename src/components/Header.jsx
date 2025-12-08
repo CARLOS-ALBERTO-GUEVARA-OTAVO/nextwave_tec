@@ -22,8 +22,15 @@ const Header = () => {
       <Link to="inicio" smooth={true} duration={500} offset={-140} className="logo">
         {/* Espacio para el logo de tu empresa */}
         <img src={logoEmpresa} alt="Logo de NextWave" />
-        <span className="logo-text">TNW</span>
+        <span className="logo-text">NWT</span>
       </Link>
+
+      {/* Checkbox oculto para controlar el menú en CSS */}
+      <input type="checkbox" id="menu-toggle" className="menu-toggle" />
+      <label htmlFor="menu-toggle" className="hamburger">
+        <i className="bi bi-list"></i> {/* Icono de abrir */}
+        <i className="bi bi-x"></i>      {/* Icono de cerrar */}
+      </label>
       <nav className="main-nav">
         <div className="nav-links">
           <Link to="inicio" smooth={true} duration={500} offset={-140} activeClass="active">Inicio</Link>

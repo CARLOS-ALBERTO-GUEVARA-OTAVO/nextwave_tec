@@ -35,10 +35,17 @@
     box-shadow: 0 12px 40px var(--shadow-color);
 }
  
+.project-visual {
+    background-color: #f0f2f5; /* Un fondo neutro para las imágenes */
+}
+
 .project-visual img {
     width: 100%;
     height: 200px; /* Altura fija para la imagen/gif */
-    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+    /* Cambiamos a 'contain' para que la imagen siempre se vea completa */
+    object-fit: contain; 
+    /* Añadimos una transición suave por si la imagen cambia */
+    transition: transform 0.3s ease;
     display: block;
     border-bottom: 1px solid #eee;
 }
@@ -107,4 +114,51 @@
 .project-button.github:hover {
     background-color: #3a4147;
     transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Responsividad para Móviles
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .portfolio-section {
+        padding: 4rem 1rem; /* Menos padding en los lados */
+    }
+
+    .portfolio-grid {
+        /* Reducimos el tamaño mínimo de las tarjetas para que quepan mejor */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .project-info {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        /* En celulares muy pequeños, forzamos a que haya solo una columna */
+        grid-template-columns: 1fr;
+    }
+
+    .project-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-visual img {
+        /* Reducimos la altura de la imagen en móviles para que sea más proporcionada */
+        height: 180px;
+    }
+
+    .project-info p {
+        font-size: 0.85rem; /* Empequeñecemos la letra para que se adapte mejor */
+        text-align: justify; /* ¡La clave! El texto se ajusta a ambos márgenes */
+        hyphens: auto; /* Ayuda a cortar palabras para un mejor justificado */
+    }
+
+    .project-button {
+        padding: 0.5rem 1rem; /* Botones más compactos */
+        font-size: 0.8rem;
+    }
 }

@@ -17,7 +17,7 @@ function About() {
 
         {/* Columna Derecha: Información */}
         <div className="about-info-column">
-          <h1>NextWave Technologies</h1>
+          <h1>NextWave Technologies C</h1>
           <p className="slogan">Impulsando tu futuro digital.</p>
           <p className="about-intro">
             Somos arquitectos de soluciones digitales. Fusionamos estrategia y tecnología para construir la infraestructura que tu negocio necesita para prosperar. Convertimos tus ideas en realidades digitales eficientes, innovadoras y de alto impacto.

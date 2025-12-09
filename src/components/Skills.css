@@ -262,3 +262,89 @@
 .slick-next {
   right: 25px; /* Las posicionamos DENTRO del carrusel */
 }
+
+/* ==========================================================================
+   Responsividad para Móviles
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 4rem 1rem; /* Menos padding en los lados */
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-header .section-title {
+    font-size: 2.2rem;
+  }
+
+  /* Ajustamos las tarjetas para que se vean bien de una en una */
+  .service-slide {
+    padding: 0 0.5rem; /* Reducimos el espacio entre tarjetas */
+  }
+
+  .service-overview-card {
+    /* La tarjeta se ajustará a la altura del contenido */
+    height: auto; 
+    min-height: 420px; /* Una altura mínima para consistencia */
+    transform: none !important; /* Desactivamos el efecto de escala */
+    background-size: cover; /* La imagen cubre la tarjeta */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Desactivamos los efectos de hover en móvil */
+  .service-overview-card:hover {
+    height: auto; /* Mantenemos la altura automática */
+    background-size: cover;
+  }
+
+  .card-content {
+    justify-content: flex-start; /* Alinea el contenido arriba */
+    align-items: center; /* Centramos los elementos (ícono, título, párrafo) */
+    text-align: center; /* El texto de los elementos (como el título) estará centrado */
+    padding: 1.5rem 1.2rem; /* Reducimos el padding un poco más */
+    flex-grow: 1; /* Permite que el contenido se estire si es necesario */
+  }
+
+  .card-content h3 {
+    font-size: 1.25rem; /* Título un poco más pequeño */
+  }
+
+  .card-content p {
+    text-align: justify; /* ¡La clave! El texto se ajusta a ambos márgenes */
+    max-width: 95%; /* Aseguramos un pequeño margen a los lados */
+    hyphens: auto; /* Ayuda a cortar palabras para un mejor justificado */
+    font-size: 0.875rem; /* Texto de párrafo aún más pequeño para que quepa todo */
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  /* Hacemos que la descripción y el botón sean visibles por defecto en móvil */
+  .service-overview-card .card-content p,
+  .service-overview-card .card-action-button {
+    opacity: 1;
+    visibility: visible;
+    max-height: none; /* Eliminamos la altura máxima para que se vea todo el texto */
+    transform: none;
+  }
+
+  /* Hacemos las flechas un poco más pequeñas y las reposicionamos */
+  .slick-prev, .slick-next {
+    width: 40px;
+    height: 40px;
+    top: auto; /* Desactivamos el centrado vertical absoluto */
+    bottom: -35px; /* Las ponemos debajo de los puntos del carrusel */
+    transform: none; /* Quitamos la transformación vertical */
+  }
+
+  .slick-prev {
+    left: calc(50% - 45px); /* Centramos y movemos a la izquierda */
+  }
+
+  .slick-next {
+    right: calc(50% - 45px); /* Centramos y movemos a la derecha */
+  }
+}

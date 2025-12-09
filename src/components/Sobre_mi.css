@@ -190,12 +190,20 @@
   }
 
   .about-photo {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
   }
 
   .about-card-body h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .about-card-body h4 {
+    font-size: 0.85rem;
+  }
+
+  .about-card-body p {
+    font-size: 0.85rem;
   }
 }
 

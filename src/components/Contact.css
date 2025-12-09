@@ -256,7 +256,7 @@
   }
 
   .contact-card h3 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .contact-social-icons {
@@ -264,7 +264,17 @@
   }
 
   .contact-social-icons a {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+
+  .email-address {
+    padding: 0.6rem 1rem; /* Hacemos el padding más pequeño */
+    font-size: 0.8rem; /* Reducimos la fuente del correo */
+  }
+
+  .contact-button {
+    padding: 0.5rem 1.2rem; /* Hacemos el botón más compacto */
+    font-size: 0.8rem; /* Reducimos la fuente del botón */
   }
 }
 

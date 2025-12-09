@@ -127,6 +127,50 @@
 .footer-bottom {
   text-align: center;
   padding: 1.5rem 0;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #777;
+}
+
+/* ==========================================================================
+   Responsividad para Móviles
+   ========================================================================== */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 3rem 5% 0;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* Una columna en celulares */
+    gap: 2.5rem;
+  }
+
+  .footer-column {
+    text-align: center; /* Centramos el contenido de cada columna */
+  }
+
+  /* Excepción para la lista de enlaces, se ve mejor a la izquierda */
+  .footer-column.links {
+    text-align: left;
+  }
+
+  .footer-column.links ul {
+    display: inline-block; /* Permite que el bloque de lista se centre */
+    text-align: left;
+  }
+
+  .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-social-icons {
+    justify-content: center; /* Centramos los iconos sociales */
+  }
 }

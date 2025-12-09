@@ -5,6 +5,8 @@
 .company-about-container {
   padding: 6rem 2rem;
   background-color: var(--light-bg);
+  /* Añadimos una transición suave para el padding */
+  transition: padding 0.3s ease;
 }
 
 /* ==========================================================================
@@ -205,19 +207,55 @@
 
 /* Para dispositivos móviles (hasta 576px) */
 @media (max-width: 576px) {
+  .company-about-container {
+    /* Reducimos el padding en los lados para ganar espacio */
+    padding: 4rem 1rem;
+  }
+
   .about-info-column h1 {
-    font-size: 2.8rem; /* Título más pequeño para móviles */
+    font-size: 2rem; /* Título mucho más pequeño para móviles */
+    line-height: 1.2; /* Mejoramos el interlineado */
   }
 
   .about-info-column .slogan {
-    font-size: 1.3rem;
+    font-size: 1rem; /* Slogan más pequeño */
+  }
+
+  .about-logo-column {
+    /* Nos aseguramos de que el logo no sea excesivamente grande */
+    max-width: 300px;
   }
 
   .about-info-column .about-intro {
-    font-size: 1.1rem;
+    font-size: 0.9rem; /* Texto de introducción más pequeño para mejor adaptación */
   }
 
-  .service-overview-card {
+  .our-pillars {
+    display: flex; /* Cambiamos a flexbox en móvil */
+    flex-direction: column; /* Apilamos las tarjetas verticalmente */
+    align-items: center; /* Centramos las tarjetas horizontalmente */
+    gap: 1.5rem; /* Ajustamos el espacio entre ellas */
+  }
+
+  .pillar-card {
     padding: 1.5rem; /* Menos padding en tarjetas para móviles */
+    max-width: 320px; /* Evita que la tarjeta sea demasiado ancha */
+    width: 100%;
+  }
+
+  .pillar-card h4 {
+    font-size: 1rem; /* Título de pilar más pequeño */
+  }
+  .pillar-card p {
+    font-size: 0.85rem; /* Texto de pilar más pequeño */
+  }
+
+  .cta-button-main {
+    padding: 10px 24px; /* Botón ligeramente más pequeño */
+    font-size: 0.95rem;
+  }
+
+  .social-media-links a {
+    font-size: 1.6rem; /* Iconos sociales un poco más pequeños */
   }
 }

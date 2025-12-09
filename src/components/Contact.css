@@ -240,27 +240,32 @@
   }
 
   .contact-section .section-title {
-    font-size: 2.2rem;
+    font-size: 1.8rem; /* Título más pequeño */
   }
 
   .contact-section .section-subtitle {
     margin-bottom: 3rem;
+    font-size: 0.95rem; /* Subtítulo más pequeño */
+    line-height: 1.5;
   }
 
   .contact-card {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem; /* Padding más reducido en la tarjeta */
   }
 
   .contact-card i {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Icono más pequeño */
   }
 
   .contact-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem; /* Título de tarjeta más pequeño */
+  }
+  .contact-card p {
+    font-size: 0.9rem; /* Párrafo más pequeño */
   }
 
   .contact-social-icons {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .contact-social-icons a {

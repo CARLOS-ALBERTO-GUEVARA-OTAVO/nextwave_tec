@@ -310,14 +310,14 @@
   }
 
   .card-content h3 {
-    font-size: 1.25rem; /* Título un poco más pequeño */
+    font-size: 1.2rem; /* Título un poco más pequeño */
   }
 
   .card-content p {
     text-align: justify; /* ¡La clave! El texto se ajusta a ambos márgenes */
+    font-size: 0.85rem; /* Hacemos la letra de la información más pequeña para que quepa bien */
     max-width: 95%; /* Aseguramos un pequeño margen a los lados */
     hyphens: auto; /* Ayuda a cortar palabras para un mejor justificado */
-    font-size: 0.875rem; /* Texto de párrafo aún más pequeño para que quepa todo */
     line-height: 1.5;
     margin-bottom: 1rem;
   }

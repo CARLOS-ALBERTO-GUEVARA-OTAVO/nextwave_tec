@@ -159,6 +159,7 @@
   font-weight: bold;
   font-size: 0.9rem; /* Hacemos el texto/ícono un poco más pequeño */
   transition: color 0.2s ease;
+  white-space: nowrap; /* ¡Esta es la clave! Evita que el texto se parta en varias líneas. */
 }
 
 .email-address:hover .copy-feedback {

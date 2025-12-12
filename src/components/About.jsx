@@ -1,8 +1,9 @@
 import React from 'react';
-import imagenPerfil from '../assets/logo_nextwave_V3.gif';                 
+import imagenPerfil from '../assets/logo_nextwave.png';                 
 // Importamos Bootstrap Icons
 import 'bootstrap-icons/font/bootstrap-icons.css';
 // Importamos los nuevos estilos para esta sección
+import FuzzyText from './FuzzyText';
 import './About.css';
 
 function About() {
@@ -17,7 +18,15 @@ function About() {
 
         {/* Columna Derecha: Información */}
         <div className="about-info-column">
-          <h1>NextWave Technologies</h1>
+          <div className="fuzzy-title-container">
+            <FuzzyText
+              fontSize="clamp(2.5rem, 8vw, 4rem)"
+              color="var(--primary-dark)"
+              baseIntensity={0.1}
+              hoverIntensity={0.3}>
+              NextWave Technologies
+            </FuzzyText>
+          </div>
           <p className="slogan">Impulsando tu futuro digital.</p>
           <p className="about-intro">
             Somos arquitectos de soluciones digitales. Fusionamos estrategia y tecnología para construir la infraestructura que tu negocio necesita para prosperar. Convertimos tus ideas en realidades digitales eficientes, innovadoras y de alto impacto.

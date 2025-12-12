@@ -259,3 +259,16 @@
     font-size: 1.6rem; /* Iconos sociales un poco más pequeños */
   }
 }
+
+/* Estilos para el contenedor del título Fuzzy en la sección About */
+.fuzzy-title-container {
+  margin-bottom: 1rem;
+  /* Centramos el canvas que se genera */
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Ajuste para alinear el canvas del título a la izquierda */
+.fuzzy-title-container canvas {
+  transform: translateX(-50px);
+}

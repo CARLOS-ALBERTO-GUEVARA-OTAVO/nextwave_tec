@@ -30,6 +30,8 @@
   width: 100%;
   height: auto;
   max-width: 350px;
+  /* Aseguramos que el canvas se ajuste bien */
+  object-fit: contain;
 }
 
 .about-info-column {
@@ -271,4 +273,15 @@
 /* Ajuste para alinear el canvas del título a la izquierda */
 .fuzzy-title-container canvas {
   transform: translateX(-50px);
+}
+
+/* Contenedor para el título ASCII para que se posicione correctamente */
+.ascii-title-wrapper {
+  position: relative;
+  width: 100%;
+  height: 120px; /* Altura para contener el efecto */
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }

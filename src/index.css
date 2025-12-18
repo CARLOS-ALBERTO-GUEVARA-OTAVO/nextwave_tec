@@ -22,3 +22,12 @@ ul {
 a {
   text-decoration: none;
 }
+
+/*
+  SOLUCIÓN: Aseguramos que el contenedor raíz y el wrapper de ClickSpark
+  ocupen el 100% de la altura de la pantalla.
+*/
+#root, #root > div {
+  height: 100%;
+  width: 100%;
+}

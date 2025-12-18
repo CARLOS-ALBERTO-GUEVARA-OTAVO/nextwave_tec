@@ -3,7 +3,7 @@ import imagenPerfil from '../assets/logo_nextwave.png';
 // Importamos Bootstrap Icons
 import 'bootstrap-icons/font/bootstrap-icons.css';
 // Importamos los nuevos estilos para esta sección
-import FuzzyText from './FuzzyText';
+import FuzzyText from './FuzzyText.jsx'; // Importamos el componente de texto difuminado
 import './About.css';
 
 function About() {
@@ -18,15 +18,17 @@ function About() {
 
         {/* Columna Derecha: Información */}
         <div className="about-info-column">
-          <div className="fuzzy-title-container">
-            <FuzzyText
-              fontSize="clamp(2.5rem, 8vw, 4rem)"
-              color="var(--primary-dark)"
-              baseIntensity={0.1}
-              hoverIntensity={0.3}>
-              NextWave Technologies
-            </FuzzyText>
-          </div>
+          {/* Título con el nuevo efecto FuzzyText */}
+          <FuzzyText
+            color="var(--primary-dark)"
+            fontSize="3.5rem"
+            fontWeight={700}
+            baseIntensity={0.05}  // Reducido para un efecto más sutil
+            hoverIntensity={0.15} // Reducido para un efecto más sutil al pasar el ratón
+          >
+            NextWave Technologies
+          </FuzzyText>
+
           <p className="slogan">Impulsando tu futuro digital.</p>
           <p className="about-intro">
             Somos arquitectos de soluciones digitales. Fusionamos estrategia y tecnología para construir la infraestructura que tu negocio necesita para prosperar. Convertimos tus ideas en realidades digitales eficientes, innovadoras y de alto impacto.

@@ -68,18 +68,28 @@ const Services = () => {
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200, // Subimos este rango para laptops pequeñas
         settings: { slidesToShow: 2, slidesToScroll: 1 }
       },
       {
-        breakpoint: 768,
-        settings: { slidesToShow: 1, slidesToScroll: 1, initialSlide: 0 }
+        breakpoint: 1024, // ¡CAMBIO IMPORTANTE! Subimos a 1024px para obligar a TODOS los celulares a mostrar 1 sola
+        settings: { slidesToShow: 1, slidesToScroll: 1, initialSlide: 0, arrows: false, dots: true }
       }
     ]
   };
 
   return (
     <section id="servicios" className="services-section" style={{ fontFamily: "'Poppins', sans-serif" }}>
+        {/* Estilos de emergencia para forzar la visualización correcta en móvil */}
+        <style>
+          {`
+            @media (max-width: 1024px) {
+              .slick-slide > div {
+                margin: 0 5px; /* Pequeño margen lateral para que no se peguen al borde */
+              }
+            }
+          `}
+        </style>
         <div className="section-header text-center mb-5 px-3">
           <h2 className="section-title">Nuestros Servicios</h2>
           <p className="section-subtitle">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import './Skills.css'; // Importamos el CSS del componente
 
@@ -57,25 +57,36 @@ const Services = () => {
     }
   ];
 
+  // ESTADO MANUAL: Controlamos el número de slides nosotros mismos con código puro
+  const [slidesToShow, setSlidesToShow] = useState(1); // Empezamos en 1 por seguridad
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Forzamos la lógica: Si es menor a 900px, OBLIGATORIAMENTE 1 slide
+      if (window.innerWidth < 900) {
+        setSlidesToShow(1);
+      } else if (window.innerWidth < 1200) {
+        setSlidesToShow(2);
+      } else {
+        setSlidesToShow(3);
+      }
+    };
+
+    handleResize(); // Ejecutar apenas carga la página
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Configuración del carrusel
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: slidesToShow, // Usamos nuestra variable manual
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1200, // Subimos este rango para laptops pequeñas
-        settings: { slidesToShow: 2, slidesToScroll: 1 }
-      },
-      {
-        breakpoint: 1024, // ¡CAMBIO IMPORTANTE! Subimos a 1024px para obligar a TODOS los celulares a mostrar 1 sola
-        settings: { slidesToShow: 1, slidesToScroll: 1, initialSlide: 0, arrows: false, dots: true }
-      }
-    ]
+    arrows: slidesToShow > 1, // Si es 1 (celular), ocultamos las flechas automáticamente
   };
 
   return (
@@ -96,7 +107,8 @@ const Services = () => {
             Entendemos tus necesidades y las transformamos en soluciones tecnológicas robustas y eficientes. Explora cómo podemos ayudarte a alcanzar tus objetivos.
           </p>
         </div>
-        <Slider {...settings}>
+        {/* El atributo 'key' es el truco: si cambia el número de slides, el carrusel se reinicia por completo */}
+        <Slider key={slidesToShow} {...settings}>
           {services.map((service, index) => (
             <div key={index} className="service-slide">
               <div 

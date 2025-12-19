@@ -41,14 +41,26 @@ function About() {
               box-sizing: border-box;
             }
             .slogan {
-              font-size: 1.1rem !important;
-              margin-bottom: 1rem !important;
+              font-size: 0.9rem !important;
+              margin-bottom: 0.5rem !important;
             }
             .about-intro {
-              font-size: 0.95rem !important; /* Tamaño legible */
-              line-height: 1.6 !important;
+              font-size: 0.8rem !important; /* Letra pequeña y adaptable como en servicios */
+              line-height: 1.4 !important;
+              text-align: justify !important; /* Justificado para que se vea ordenado */
               width: 100%;
               word-wrap: break-word; /* Asegura que el texto no se salga si hay palabras largas */
+            }
+            .cta-button-main {
+              font-size: 0.85rem !important;
+              padding: 0.8rem 1.5rem !important;
+            }
+            .pillar-card h4 {
+              font-size: 0.95rem !important;
+            }
+            .pillar-card p {
+              font-size: 0.8rem !important;
+              line-height: 1.3 !important;
             }
             .our-pillars {
               flex-direction: column;

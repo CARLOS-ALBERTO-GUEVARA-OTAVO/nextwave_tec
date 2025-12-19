@@ -77,6 +77,52 @@ const FounderProfile = ({ name, role, description, photo, linkedin, github, inst
 const Sobre_mi = () => {
   return (
     <section id="nosotros" className="about-us-section" style={{ fontFamily: "'Poppins', sans-serif" }}>
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .about-us-section {
+              padding: 2rem 1rem !important;
+            }
+            .about-us-title {
+              font-size: 1.5rem !important;
+            }
+            .about-us-subtitle {
+              font-size: 0.8rem !important;
+              text-align: justify !important;
+              line-height: 1.4 !important;
+              padding: 0 5px !important;
+            }
+            .about-cards-container {
+              display: flex !important;
+              flex-direction: column !important;
+              gap: 2rem !important;
+            }
+            .about-card {
+              width: 100% !important;
+              padding: 1.5rem 1rem !important;
+            }
+            .about-photo {
+              width: 130px !important; /* Foto un poco más pequeña */
+              height: 130px !important;
+            }
+            .about-card-body h3 {
+              font-size: 1.1rem !important;
+            }
+            .about-card-body h4 {
+              font-size: 0.9rem !important;
+              margin-bottom: 0.5rem !important;
+            }
+            .about-card-body p {
+              font-size: 0.8rem !important;
+              text-align: justify !important;
+              line-height: 1.3 !important;
+            }
+            .about-social-links a {
+              font-size: 1.2rem !important;
+            }
+          }
+        `}
+      </style>
       <div className="about-us-container">
         <div className="about-us-header">
           <h2 className="about-us-title">Sobre Nosotros</h2>

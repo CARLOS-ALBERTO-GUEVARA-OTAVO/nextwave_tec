@@ -277,7 +277,13 @@
   }
 
   .section-header .section-title {
-    font-size: 2.2rem;
+    font-size: 1.5rem; /* Reducimos el título para que no se vea gigante en comparación */
+  }
+
+  .section-header .section-subtitle {
+    font-size: 0.8rem; /* Ajustamos el texto al mismo tamaño pequeño y legible de las tarjetas */
+    line-height: 1.4;
+    padding: 0 10px; /* Un poco de margen para que no toque los bordes de la pantalla */
   }
 
   /* Ajustamos las tarjetas para que se vean bien de una en una */
@@ -288,7 +294,7 @@
   .service-overview-card {
     /* La tarjeta se ajustará a la altura del contenido */
     height: auto; 
-    min-height: 420px; /* Una altura mínima para consistencia */
+    min-height: 320px; /* Reducimos la altura mínima para que no ocupe tanta pantalla vertical */
     transform: none !important; /* Desactivamos el efecto de escala */
     background-size: cover; /* La imagen cubre la tarjeta */
     display: flex;
@@ -305,21 +311,27 @@
     justify-content: flex-start; /* Alinea el contenido arriba */
     align-items: center; /* Centramos los elementos (ícono, título, párrafo) */
     text-align: center; /* El texto de los elementos (como el título) estará centrado */
-    padding: 1.5rem 1.2rem; /* Reducimos el padding un poco más */
+    padding: 0.8rem 0.5rem; /* Padding aún más reducido para ganar espacio lateral */
     flex-grow: 1; /* Permite que el contenido se estire si es necesario */
   }
 
+  .card-content i {
+    font-size: 1.6rem; /* Icono más pequeño */
+    margin-bottom: 0.3rem;
+  }
+
   .card-content h3 {
-    font-size: 1.2rem; /* Título un poco más pequeño */
+    font-size: 0.95rem; /* Título más pequeño */
+    margin-bottom: 0.3rem;
   }
 
   .card-content p {
     text-align: justify; /* ¡La clave! El texto se ajusta a ambos márgenes */
-    font-size: 0.85rem; /* Hacemos la letra de la información más pequeña para que quepa bien */
+    font-size: 0.75rem; /* Letra aún más pequeña para que quepa todo */
     max-width: 95%; /* Aseguramos un pequeño margen a los lados */
     hyphens: auto; /* Ayuda a cortar palabras para un mejor justificado */
-    line-height: 1.5;
-    margin-bottom: 1rem;
+    line-height: 1.2; /* Líneas más unidas */
+    margin-bottom: 0.5rem;
   }
 
   /* Hacemos que la descripción y el botón sean visibles por defecto en móvil */
@@ -329,6 +341,10 @@
     visibility: visible;
     max-height: none; /* Eliminamos la altura máxima para que se vea todo el texto */
     transform: none;
+  }
+
+  .card-action-button {
+    font-size: 0.8rem; /* Botón más pequeño para asegurar que no se corte */
   }
 
   /* Hacemos las flechas un poco más pequeñas y las reposicionamos */

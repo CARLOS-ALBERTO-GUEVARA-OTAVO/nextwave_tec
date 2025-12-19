@@ -70,3 +70,22 @@ h1, h2, h3, h4 {
   color: var(--primary-blue);
   margin-bottom: 2.5rem;
 }
+
+/* ==========================================================================
+   Optimización Global de Espacios para Móviles (Aprovechar Pantalla)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Ajuste global para que todas las secciones aprovechen el ancho completo */
+  .page-section, 
+  section[id] { /* Aplica a todas las secciones principales (Inicio, Servicios, etc.) */
+    margin: 0 !important; /* Eliminamos márgenes externos para usar todo el ancho */
+    padding: 3rem 1rem !important; /* Padding interno reducido al mínimo cómodo */
+    width: 100% !important;
+    border-radius: 0 !important; /* Quitamos bordes redondeados en móvil para ganar espacio */
+    box-shadow: none !important; /* Limpiamos sombras para ganar espacio visual */
+  }
+
+  .main-content {
+    padding-top: 100px; /* Ajustamos el espacio superior del header */
+  }
+}

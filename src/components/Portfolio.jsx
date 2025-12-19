@@ -80,19 +80,36 @@ const Portfolio = () => {
         {`
           @media (max-width: 768px) {
             .portfolio-section {
-              padding: 3rem 1rem !important;
+              padding: 2rem 1rem !important;
             }
             .portfolio-title {
-              font-size: 2rem !important;
+              font-size: 1.5rem !important;
             }
             .portfolio-subtitle {
-              font-size: 0.95rem !important;
+              font-size: 0.8rem !important;
+              text-align: justify !important;
+              line-height: 1.4 !important;
             }
             .project-img-wrapper {
-              height: 200px !important;
+              height: 160px !important; /* Imagen reducida para móvil */
             }
             .project-card-body {
-              padding: 1.5rem !important;
+              padding: 1rem !important;
+            }
+            .project-card-body h3 {
+              font-size: 1.1rem !important;
+            }
+            .project-card-body p.card-text {
+              font-size: 0.8rem !important;
+              text-align: justify !important;
+              line-height: 1.3 !important;
+            }
+            .badge {
+              font-size: 0.7rem !important;
+            }
+            .btn {
+              font-size: 0.85rem !important;
+              padding: 0.5rem !important;
             }
           }
         `}

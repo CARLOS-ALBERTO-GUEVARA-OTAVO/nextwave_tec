@@ -30,7 +30,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contacto" className="contact-section">
+    <section id="contacto" className="contact-section" style={{ fontFamily: "'Poppins', sans-serif" }}>
       <h2 className="section-title">Hablemos</h2>
       <p className="section-subtitle">
         ¿Listo para llevar tu proyecto al siguiente nivel? Contáctanos. Estamos aquí para ayudarte a construir el futuro digital de tu negocio.

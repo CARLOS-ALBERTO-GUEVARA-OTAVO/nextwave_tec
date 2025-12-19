@@ -1,5 +1,5 @@
 import React from 'react';
-import imagenPerfil from '../assets/logo_nextwave.png';                 
+import imagenPerfil from '../assets/fondo.gif';                 
 // Importamos Bootstrap Icons
 import 'bootstrap-icons/font/bootstrap-icons.css';
 // Importamos los nuevos estilos para esta sección
@@ -8,7 +8,7 @@ import './About.css';
 
 function About() {
   return (
-    <section id="inicio" className="company-about-container">
+    <section id="inicio" className="company-about-container" style={{ fontFamily: "'Poppins', sans-serif" }}>
       {/* Contenedor principal para el diseño de dos columnas */}
       <div className="about-layout">
         {/* Columna Izquierda: Logo */}

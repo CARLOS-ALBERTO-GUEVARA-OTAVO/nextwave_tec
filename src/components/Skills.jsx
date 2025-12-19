@@ -79,7 +79,7 @@ const Services = () => {
   };
 
   return (
-    <section id="servicios" className="services-section">
+    <section id="servicios" className="services-section" style={{ fontFamily: "'Poppins', sans-serif" }}>
       <div className="section-header">
         <h2 className="section-title">Nuestros Servicios</h2>
         <p className="section-subtitle">

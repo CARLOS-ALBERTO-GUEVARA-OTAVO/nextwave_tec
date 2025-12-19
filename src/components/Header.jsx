@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import './Header.css'; // Importamos los nuevos estilos
 // 1. Importamos el logo desde la carpeta assets
-import logoEmpresa from '../assets/logo_nextwave.png';
+import logoEmpresa from '../assets/logo_nextwave2.png';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);

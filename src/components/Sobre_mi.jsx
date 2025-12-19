@@ -76,7 +76,7 @@ const FounderProfile = ({ name, role, description, photo, linkedin, github, inst
 
 const Sobre_mi = () => {
   return (
-    <section id="nosotros" className="about-us-section">
+    <section id="nosotros" className="about-us-section" style={{ fontFamily: "'Poppins', sans-serif" }}>
       <div className="about-us-container">
         <div className="about-us-header">
           <h2 className="about-us-title">Sobre Nosotros</h2>

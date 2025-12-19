@@ -82,7 +82,7 @@
 
 .cta-button-main:hover {
   transform: translateY(-3px);
-  background-color: var(--primary-color-light, #ffd700);
+  background-color: var(--primary-color-light, #000000);
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
@@ -195,6 +195,11 @@
     text-align: center;
     gap: 2rem;
   }
+  
+  .fuzzy-title-container {
+    justify-content: center;
+    margin-left: 0;
+  }
 
   .about-info-column .about-intro {
     margin-left: auto;
@@ -264,15 +269,16 @@
 
 /* Estilos para el contenedor del título Fuzzy en la sección About */
 .fuzzy-title-container {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   /* Centramos el canvas que se genera */
   display: flex;
   justify-content: flex-start;
+  margin-left: -6px; /* Ajuste visual: tiramos un poco a la izquierda para alinear con el texto */
 }
 
 /* Ajuste para alinear el canvas del título a la izquierda */
 .fuzzy-title-container canvas {
-  transform: translateX(-50px);
+  /* transform: translateX(-50px); Eliminado porque desalineaba demasiado */
 }
 
 /* Contenedor para el título ASCII para que se posicione correctamente */

@@ -76,10 +76,31 @@ const Portfolio = () => {
 
   return (
     <section id="proyectos" className="portfolio-section py-5" style={{ fontFamily: "'Poppins', sans-serif", backgroundColor: '#f8f9fa' }}>
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .portfolio-section {
+              padding: 3rem 1rem !important;
+            }
+            .portfolio-title {
+              font-size: 2rem !important;
+            }
+            .portfolio-subtitle {
+              font-size: 0.95rem !important;
+            }
+            .project-img-wrapper {
+              height: 200px !important;
+            }
+            .project-card-body {
+              padding: 1.5rem !important;
+            }
+          }
+        `}
+      </style>
       <div className="container">
         <div className="text-center mb-5">
-          <h2 className="fw-bold display-5 mb-3" style={{ color: '#2c3e50' }}>Proyectos y Casos de Éxito</h2>
-          <p className="lead text-muted mx-auto" style={{ maxWidth: '700px' }}>
+          <h2 className="fw-bold display-5 mb-3 portfolio-title" style={{ color: '#2c3e50' }}>Proyectos y Casos de Éxito</h2>
+          <p className="lead text-muted mx-auto portfolio-subtitle" style={{ maxWidth: '700px' }}>
             Aquí puedes ver una selección de mi trabajo. Un proyecto desplegado y otros repositorios donde exploro diferentes tecnologías.
           </p>
         </div>
@@ -90,7 +111,7 @@ const Portfolio = () => {
               <div className="card h-100 shadow-sm border-0 overflow-hidden hover-effect" style={{ transition: 'transform 0.3s ease' }}>
                 <div className="row g-0 h-100">
                   {/* Imagen del proyecto */}
-                  <div className="col-md-12" style={{ height: '250px', overflow: 'hidden', borderBottom: '1px solid #eee' }}>
+                  <div className="col-md-12 project-img-wrapper" style={{ height: '250px', overflow: 'hidden', borderBottom: '1px solid #eee' }}>
                     <img 
                       src={project.imageUrl} 
                       className="img-fluid w-100 h-100" 
@@ -101,7 +122,7 @@ const Portfolio = () => {
                   
                   {/* Cuerpo de la tarjeta */}
                   <div className="col-md-12">
-                    <div className="card-body d-flex flex-column p-4">
+                    <div className="card-body d-flex flex-column p-4 project-card-body">
                       <h3 className="card-title h4 fw-bold mb-3" style={{ color: '#333' }}>{project.title}</h3>
                       <p className="card-text text-muted mb-4" style={{ lineHeight: '1.6' }}>{project.description}</p>
                       

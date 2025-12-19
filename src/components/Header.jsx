@@ -18,7 +18,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${scrolled ? 'scrolled' : ''}`} style={{ fontFamily: "'Poppins', sans-serif" }}>
       <Link to="inicio" smooth={true} duration={500} offset={-140} className="logo">
         {/* Espacio para el logo de tu empresa */}
         <img src={logoEmpresa} alt="Logo de NextWave" />

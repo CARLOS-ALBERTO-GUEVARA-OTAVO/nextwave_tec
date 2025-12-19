@@ -69,43 +69,43 @@ const Services = () => {
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 2 }
+        settings: { slidesToShow: 2, slidesToScroll: 1 }
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 1 }
+        settings: { slidesToShow: 1, slidesToScroll: 1, initialSlide: 0 }
       }
     ]
   };
 
   return (
     <section id="servicios" className="services-section" style={{ fontFamily: "'Poppins', sans-serif" }}>
-      <div className="section-header">
-        <h2 className="section-title">Nuestros Servicios</h2>
-        <p className="section-subtitle">
-          Entendemos tus necesidades y las transformamos en soluciones tecnológicas robustas y eficientes. Explora cómo podemos ayudarte a alcanzar tus objetivos.
-        </p>
-      </div>
-      <Slider {...settings}>
-        {services.map((service, index) => (
-          <div key={index} className="service-slide">
-            <div 
-              className="service-overview-card"
-              style={{ backgroundImage: `url(${service.backgroundImage})` }}
-            >
-              <div className="card-overlay"></div>
-              <div className="card-content">
-                <i className={service.icon}></i>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <a href="#contacto" className="card-action-button" onClick={(e) => e.stopPropagation()}>
-                  Saber más... <i className="bi bi-arrow-right-short"></i>
-                </a>
+        <div className="section-header text-center mb-5 px-3">
+          <h2 className="section-title">Nuestros Servicios</h2>
+          <p className="section-subtitle">
+            Entendemos tus necesidades y las transformamos en soluciones tecnológicas robustas y eficientes. Explora cómo podemos ayudarte a alcanzar tus objetivos.
+          </p>
+        </div>
+        <Slider {...settings}>
+          {services.map((service, index) => (
+            <div key={index} className="service-slide">
+              <div 
+                className="service-overview-card"
+                style={{ backgroundImage: `url(${service.backgroundImage})` }}
+              >
+                <div className="card-overlay"></div>
+                <div className="card-content">
+                  <i className={service.icon}></i>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  <a href="#contacto" className="card-action-button" onClick={(e) => e.stopPropagation()}>
+                    Saber más... <i className="bi bi-arrow-right-short"></i>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
     </section>
   );
 };

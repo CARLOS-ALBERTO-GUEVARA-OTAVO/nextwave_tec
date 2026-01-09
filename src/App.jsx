@@ -1,4 +1,5 @@
 import React from 'react';
+import SplashCursor from './SplashCursor';
 import Header from './components/Header';
 import About from './components/About';
 import Sobre_mi from './components/Sobre_mi';
@@ -14,6 +15,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <SplashCursor />
       <Header />
       <main className="main-content">
         {/* Cada componente ahora está envuelto en su propia sección con el nuevo estilo */}
@@ -41,4 +43,3 @@ function App() {
 }
 
 export default App;
-
